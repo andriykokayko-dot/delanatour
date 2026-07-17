@@ -1,0 +1,2673 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De'Lana Tour — авторські тури на Мадейру</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0d2b3e;
+            --primary-light: #1a4058;
+            --primary-dark: #071a26;
+            --accent: #e8846e;
+            --accent-light: #f5d6ce;
+            --accent-dark: #d16a54;
+            --cream: #f8f6f3;
+            --white: #ffffff;
+            --gray: #e4dfda;
+            --text-dark: #1a2e3f;
+            --text-soft: #5a7385;
+            --shadow: 0 20px 60px rgba(13, 43, 62, 0.08);
+            --shadow-hover: 0 30px 80px rgba(13, 43, 62, 0.14);
+            --radius: 24px;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            --font-serif: 'Playfair Display', serif;
+            --font-sans: 'Inter', system-ui, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--cream);
+            color: var(--text-dark);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--accent-light);
+            color: var(--primary);
+            padding: 6px 22px;
+            border-radius: 60px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 16px;
+            font-family: var(--font-sans);
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 3rem;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .section-title span {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .section-sub {
+            font-size: 1.15rem;
+            color: var(--text-soft);
+            max-width: 600px;
+            margin-bottom: 48px;
+            font-weight: 300;
+        }
+
+        .text-center { text-align: center; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            background: var(--primary);
+            color: var(--white);
+            padding: 16px 44px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            box-shadow: 0 8px 30px rgba(13, 43, 62, 0.2);
+            letter-spacing: 0.02em;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-3px);
+            box-shadow: 0 14px 40px rgba(13, 43, 62, 0.3);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: var(--white);
+            box-shadow: 0 8px 30px rgba(232, 132, 110, 0.35);
+        }
+
+        .btn-accent:hover {
+            background: var(--accent-dark);
+            box-shadow: 0 14px 40px rgba(232, 132, 110, 0.45);
+            transform: translateY(-3px);
+        }
+
+        .navbar {
+            padding: 12px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(13, 43, 62, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 4px 30px rgba(13, 43, 62, 0.06);
+        }
+
+        .logo {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.02em;
+        }
+
+        .logo span {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            list-style: none;
+            font-weight: 500;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-soft);
+            transition: var(--transition);
+            font-size: 0.9rem;
+            text-decoration: none;
+            position: relative;
+            font-weight: 500;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .social-icons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .social-icons a {
+            color: var(--text-soft);
+            font-size: 1.2rem;
+            transition: var(--transition);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--cream);
+            border: 1px solid var(--gray);
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+
+        .social-icons .telegram-icon:hover {
+            background: #0088cc;
+            color: white;
+            border-color: #0088cc;
+        }
+
+        .social-icons .whatsapp-icon:hover {
+            background: #25D366;
+            color: white;
+            border-color: #25D366;
+        }
+
+        .social-icons .instagram-icon:hover {
+            background: #E4405F;
+            color: white;
+            border-color: #E4405F;
+        }
+
+        .social-icons .facebook-icon:hover {
+            background: #1877F2;
+            color: white;
+            border-color: #1877F2;
+        }
+
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            background: var(--cream);
+            padding: 3px 4px;
+            border-radius: 40px;
+            border: 1px solid var(--gray);
+        }
+
+        .language-switcher a {
+            color: var(--text-soft);
+            text-decoration: none;
+            padding: 4px 10px;
+            border-radius: 30px;
+            transition: var(--transition);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.65rem;
+            letter-spacing: 0.04em;
+        }
+
+        .language-switcher a.active {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .language-switcher a:hover:not(.active) {
+            background: var(--accent-light);
+            color: var(--primary);
+        }
+
+        .hero {
+            padding: 60px 0 100px;
+            background: linear-gradient(165deg, #f0ede8 0%, var(--cream) 60%, var(--white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-serif);
+            font-size: 4.2rem;
+            line-height: 1.02;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .hero-content h1 i {
+            color: var(--accent);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-soft);
+            max-width: 500px;
+            margin-bottom: 32px;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stats div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .hero-stats i {
+            font-size: 1.5rem;
+            color: var(--accent);
+        }
+
+        .carousel-wrapper {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-hover);
+            background: #e8e0d6;
+            aspect-ratio: 4 / 3;
+            width: 100%;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            height: 100%;
+            width: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            flex-shrink: 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-start;
+            padding: 20px;
+            position: relative;
+        }
+
+        .carousel-slide .slide-number {
+            background: rgba(13, 43, 62, 0.7);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            color: #fff;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            font-family: var(--font-sans);
+            border: 1px solid rgba(255,255,255,0.15);
+            pointer-events: none;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 60px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(13, 43, 62, 0.08);
+            color: var(--primary);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 10;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+        }
+
+        .carousel-btn:hover {
+            background: var(--white);
+            transform: translateY(-50%) scale(1.05);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+        }
+
+        .carousel-btn.prev { left: 14px; }
+        .carousel-btn.next { right: 14px; }
+
+        .carousel-dots {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            padding: 6px 14px;
+            border-radius: 60px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .carousel-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 60px;
+            background: rgba(255, 255, 255, 0.5);
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            padding: 0;
+        }
+
+        .carousel-dot.active {
+            background: var(--accent);
+            width: 24px;
+            box-shadow: 0 0 0 2px rgba(232, 132, 110, 0.3);
+        }
+
+        .carousel-dot:hover {
+            background: var(--accent-light);
+        }
+
+        .about {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-content h2 {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .about-content h2 span {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .about-content p {
+            color: var(--text-soft);
+            font-size: 1.05rem;
+            margin-bottom: 16px;
+            font-weight: 300;
+        }
+
+        .about-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .about-features div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--cream);
+            padding: 10px 22px 10px 16px;
+            border-radius: 60px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .about-features div:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+        }
+
+        .about-features i {
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+
+        .tours {
+            padding: 100px 0;
+            background: var(--cream);
+        }
+
+        .tour-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 48px;
+            max-width: 760px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(13, 43, 62, 0.04);
+            transition: var(--transition);
+        }
+
+        .tour-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .tour-card .price {
+            font-family: var(--font-serif);
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 12px 0 4px;
+        }
+
+        .tour-card .price small {
+            font-family: var(--font-sans);
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: var(--text-soft);
+        }
+
+        .tour-list {
+            margin-top: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .tour-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--cream);
+            padding: 14px 20px;
+            border-radius: 60px;
+            border: 1px solid var(--gray);
+            transition: var(--transition);
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tour-item:hover {
+            border-color: var(--accent);
+            background: var(--accent-light);
+        }
+
+        .tour-item .tour-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .tour-item .tour-info .date {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .tour-item .tour-info .spots {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.85rem;
+            color: var(--text-soft);
+        }
+
+        .tour-item .tour-info .spots .total {
+            color: var(--text-soft);
+        }
+
+        .tour-item .tour-info .spots .available {
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        .tour-item .tour-info .spots .bar {
+            width: 60px;
+            height: 4px;
+            background: var(--gray);
+            border-radius: 4px;
+            overflow: hidden;
+            display: inline-block;
+        }
+
+        .tour-item .tour-info .spots .bar .fill {
+            height: 100%;
+            background: var(--accent);
+            border-radius: 4px;
+            transition: width 0.6s ease;
+        }
+
+        .tour-item .tour-actions {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .btn-detail {
+            background: var(--accent-light);
+            color: var(--primary);
+            border: 1px solid var(--accent);
+            padding: 6px 18px;
+            font-size: 0.8rem;
+            border-radius: 40px;
+            font-weight: 500;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-detail:hover {
+            background: var(--accent);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .tour-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 32px;
+            justify-content: center;
+        }
+
+        .btn-tour {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            min-width: 200px;
+            flex: 1 1 auto;
+            max-width: 260px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        }
+
+        .btn-tour i {
+            font-size: 1.2rem;
+        }
+
+        .btn-tour:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .btn-tour-telegram {
+            background: var(--accent);
+            color: var(--white);
+            box-shadow: 0 6px 24px rgba(232, 132, 110, 0.35);
+        }
+
+        .btn-tour-telegram:hover {
+            background: var(--accent-dark);
+            box-shadow: 0 10px 32px rgba(232, 132, 110, 0.45);
+        }
+
+        .btn-tour-whatsapp {
+            background: #25D366;
+            color: var(--white);
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.35);
+        }
+
+        .btn-tour-whatsapp:hover {
+            background: #1da851;
+            box-shadow: 0 10px 32px rgba(37, 211, 102, 0.45);
+        }
+
+        .btn-tour-instagram {
+            background: #E4405F;
+            color: var(--white);
+            box-shadow: 0 6px 24px rgba(228, 64, 95, 0.35);
+        }
+
+        .btn-tour-instagram:hover {
+            background: #c1354a;
+            box-shadow: 0 10px 32px rgba(228, 64, 95, 0.45);
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 43, 62, 0.75);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--white);
+            border-radius: var(--radius);
+            max-width: 820px;
+            width: 100%;
+            max-height: 92vh;
+            overflow: hidden;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.35);
+            position: relative;
+            animation: modalIn 0.35s ease;
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: scale(0.96) translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .modal-header {
+            padding: 18px 28px 14px;
+            border-bottom: 1px solid var(--gray);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--cream);
+            border-radius: var(--radius) var(--radius) 0 0;
+            flex-shrink: 0;
+        }
+
+        .modal-header h2 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            color: var(--primary);
+        }
+
+        .modal-header h2 span {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .modal-close {
+            background: var(--accent-light);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            color: var(--primary);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .modal-close:hover {
+            background: var(--accent);
+            color: var(--white);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 20px 28px 28px;
+            overflow-y: auto;
+            max-height: calc(92vh - 75px);
+        }
+
+        .day-carousel {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            background: var(--cream);
+        }
+
+        .day-track {
+            display: flex;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            width: 100%;
+        }
+
+        .day-slide {
+            flex: 0 0 100%;
+            width: 100%;
+            padding: 20px 24px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .day-slide .day-image {
+            width: 100%;
+            height: 160px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #d5c8b8 0%, #bcaa97 100%);
+            margin-bottom: 14px;
+            background-size: cover;
+            background-position: center;
+            flex-shrink: 0;
+        }
+
+        .day-slide .day-number {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.7rem;
+            padding: 3px 14px;
+            border-radius: 40px;
+            margin-bottom: 8px;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .day-slide h3 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .day-slide .day-desc {
+            color: var(--text-soft);
+            font-size: 0.92rem;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        .day-slide .day-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            max-height: 260px;
+            overflow-y: auto;
+            padding-right: 4px;
+        }
+
+        .day-slide .day-list::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .day-slide .day-list::-webkit-scrollbar-thumb {
+            background: var(--accent);
+            border-radius: 4px;
+        }
+
+        .day-slide .day-list::-webkit-scrollbar-track {
+            background: var(--gray);
+            border-radius: 4px;
+        }
+
+        .day-slide .day-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.88rem;
+            color: var(--text-dark);
+            line-height: 1.5;
+            padding: 6px 12px;
+            background: var(--white);
+            border-radius: 10px;
+            border: 1px solid rgba(13, 43, 62, 0.04);
+            word-break: break-word;
+        }
+
+        .day-slide .day-list li i {
+            color: var(--accent);
+            font-size: 0.85rem;
+            margin-top: 2px;
+            flex-shrink: 0;
+            width: 18px;
+            text-align: center;
+        }
+
+        .day-slide .day-list li strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+            margin-top: 18px;
+            flex-wrap: wrap;
+        }
+
+        .carousel-nav button {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 1px solid var(--gray);
+            color: var(--primary);
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .carousel-nav button:hover {
+            background: var(--accent);
+            color: var(--white);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .carousel-nav .day-indicator {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.85rem;
+            color: var(--text-soft);
+            font-weight: 500;
+        }
+
+        .carousel-nav .day-indicator .dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .carousel-nav .day-indicator .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gray);
+            transition: var(--transition);
+        }
+
+        .carousel-nav .day-indicator .dot.active {
+            background: var(--accent);
+            width: 20px;
+        }
+
+        .steps {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .step-item {
+            background: var(--cream);
+            padding: 40px 28px;
+            border-radius: var(--radius);
+            text-align: center;
+            transition: var(--transition);
+            border-bottom: 4px solid transparent;
+            position: relative;
+        }
+
+        .step-item:hover {
+            border-bottom-color: var(--accent);
+            background: #f6f0e9;
+            transform: translateY(-6px);
+            box-shadow: var(--shadow);
+        }
+
+        .step-item .step-num {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            transition: var(--transition);
+            font-family: var(--font-serif);
+        }
+
+        .step-item:hover .step-num {
+            background: var(--accent);
+            transform: scale(1.05);
+        }
+
+        .step-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-family: var(--font-serif);
+        }
+
+        .step-item p {
+            color: var(--text-soft);
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        .testimonials {
+            padding: 100px 0;
+            background: var(--cream);
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-item {
+            background: var(--white);
+            padding: 36px;
+            border-radius: var(--radius);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(13, 43, 62, 0.04);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .testimonial-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow);
+        }
+
+        .testimonial-item i {
+            color: var(--accent);
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+            opacity: 0.6;
+        }
+
+        .testimonial-item p {
+            font-style: italic;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+            font-size: 1.05rem;
+            font-weight: 300;
+        }
+
+        .testimonial-item .author {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .testimonials .facebook-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            margin-top: 40px;
+            padding: 14px 40px;
+            background: #1877F2;
+            color: var(--white);
+            border-radius: 60px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 8px 30px rgba(24, 119, 242, 0.3);
+        }
+
+        .testimonials .facebook-link:hover {
+            background: #0d65d9;
+            transform: translateY(-3px);
+            box-shadow: 0 14px 40px rgba(24, 119, 242, 0.4);
+        }
+
+        .apartments {
+            padding: 100px 0;
+            background: var(--white);
+        }
+
+        .apartments-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .apartments-content h2 {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            margin-bottom: 16px;
+            color: var(--primary);
+        }
+
+        .apartments-content h2 span {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .apartments-content p {
+            color: var(--text-soft);
+            font-size: 1.05rem;
+            margin-bottom: 16px;
+            font-weight: 300;
+        }
+
+        .faq {
+            padding: 100px 0;
+            background: var(--cream);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px 60px;
+            margin-top: 20px;
+        }
+
+        .faq-item {
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(13, 43, 62, 0.05);
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            color: var(--primary);
+        }
+
+        .faq-item h4 i {
+            color: var(--accent);
+            font-size: 1.2rem;
+            width: 28px;
+            flex-shrink: 0;
+        }
+
+        .faq-item p {
+            color: var(--text-soft);
+            font-size: 0.95rem;
+            padding-left: 42px;
+            font-weight: 300;
+        }
+
+        .cta {
+            padding: 80px 0;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '✦';
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            font-size: 18rem;
+            color: rgba(255, 255, 255, 0.02);
+            font-family: var(--font-serif);
+            pointer-events: none;
+        }
+
+        .cta h2 {
+            font-family: var(--font-serif);
+            font-size: 3.2rem;
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 2;
+            font-weight: 700;
+        }
+
+        .cta h2 span {
+            color: var(--accent);
+            font-style: italic;
+        }
+
+        .cta p {
+            font-size: 1.2rem;
+            opacity: 0.85;
+            margin-bottom: 36px;
+            position: relative;
+            z-index: 2;
+            font-weight: 300;
+        }
+
+        .cta .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 34px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            min-width: 160px;
+        }
+
+        .cta .cta-btn i {
+            font-size: 1.2rem;
+        }
+
+        .cta .cta-btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .cta .cta-telegram {
+            background: var(--white);
+            color: var(--primary);
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.2);
+        }
+
+        .cta .cta-telegram:hover {
+            background: var(--accent-light);
+            box-shadow: 0 14px 40px rgba(255, 255, 255, 0.3);
+        }
+
+        .cta .cta-whatsapp {
+            background: #25D366;
+            color: white;
+            box-shadow: 0 8px 30px rgba(37, 211, 102, 0.35);
+        }
+
+        .cta .cta-whatsapp:hover {
+            background: #1da851;
+            box-shadow: 0 14px 40px rgba(37, 211, 102, 0.45);
+        }
+
+        .cta .cta-instagram {
+            background: #E4405F;
+            color: white;
+            box-shadow: 0 8px 30px rgba(228, 64, 95, 0.35);
+        }
+
+        .cta .cta-instagram:hover {
+            background: #c1354a;
+            box-shadow: 0 14px 40px rgba(228, 64, 95, 0.45);
+        }
+
+        .cta .cta-facebook {
+            background: #1877F2;
+            color: white;
+            box-shadow: 0 8px 30px rgba(24, 119, 242, 0.35);
+            padding: 18px 50px;
+            font-size: 1.1rem;
+            width: 100%;
+            max-width: 400px;
+            margin-top: 8px;
+        }
+
+        .cta .cta-facebook:hover {
+            background: #0d65d9;
+            box-shadow: 0 14px 40px rgba(24, 119, 242, 0.45);
+        }
+
+        .footer {
+            padding: 40px 0;
+            background: var(--primary-dark);
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        .footer span {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .footer a {
+            color: rgba(255, 255, 255, 0.5);
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: var(--accent);
+        }
+
+        .footer .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .footer .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .footer .footer-social a:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: var(--white);
+            width: 48px;
+            height: 48px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 30px rgba(13, 43, 62, 0.25);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            border: none;
+            cursor: pointer;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--accent);
+            transform: translateY(-4px);
+        }
+
+        @media (max-width: 1024px) {
+            .hero-grid,
+            .about-grid,
+            .apartments-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            .hero-content h1 { font-size: 3.2rem; }
+            .section-title { font-size: 2.6rem; }
+            .steps-grid { grid-template-columns: 1fr 1fr; }
+            .testimonial-grid { grid-template-columns: 1fr 1fr; }
+            .faq-grid { grid-template-columns: 1fr; gap: 30px; }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 10px;
+                padding: 10px 0;
+            }
+            .navbar-right { justify-content: center; gap: 10px; }
+            .nav-links { justify-content: center; gap: 10px 14px; }
+            .social-icons a { width: 32px; height: 32px; font-size: 1rem; }
+            .hero-content h1 { font-size: 2.6rem; }
+            .hero-content p { font-size: 1rem; }
+            .hero-stats { gap: 16px; }
+            .section-title { font-size: 2.2rem; }
+            .section-sub { font-size: 1rem; margin-bottom: 32px; }
+            .steps-grid { grid-template-columns: 1fr; }
+            .testimonial-grid { grid-template-columns: 1fr; }
+            .tour-card { padding: 28px; }
+            .tour-card .price { font-size: 2.6rem; }
+            .tour-item {
+                flex-direction: column;
+                align-items: stretch;
+                border-radius: 12px;
+                padding: 16px;
+            }
+            .tour-item .tour-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .tour-item .tour-actions { justify-content: flex-start; }
+            .btn-tour {
+                min-width: 160px;
+                max-width: 100%;
+                flex: 1 1 100%;
+                padding: 14px 20px;
+                font-size: 0.9rem;
+            }
+            .about-content h2 { font-size: 2rem; }
+            .apartments-content h2 { font-size: 2rem; }
+            .cta h2 { font-size: 2.2rem; }
+            .cta p { font-size: 1rem; }
+            .cta .cta-buttons { flex-direction: column; align-items: center; }
+            .cta .cta-btn { width: 100%; max-width: 320px; }
+            .cta .cta-facebook { max-width: 320px; }
+            .faq-item p { padding-left: 0; }
+            .btn-primary { padding: 14px 28px; font-size: 0.95rem; }
+            .logo { font-size: 1.5rem; text-align: center; }
+            .section-badge { font-size: 0.7rem; padding: 4px 16px; }
+            .carousel-btn { width: 36px; height: 36px; font-size: 1rem; }
+            .carousel-btn.prev { left: 10px; }
+            .carousel-btn.next { right: 10px; }
+            .carousel-dots { gap: 6px; padding: 4px 10px; }
+            .carousel-dot { width: 8px; height: 8px; }
+            .carousel-dot.active { width: 18px; }
+            .modal { max-width: 100%; margin: 10px; max-height: 95vh; border-radius: 12px; }
+            .modal-header { padding: 14px 18px 10px; }
+            .modal-header h2 { font-size: 1.1rem; }
+            .modal-close { width: 34px; height: 34px; font-size: 1rem; }
+            .modal-body { padding: 14px 16px 20px; max-height: calc(95vh - 65px); }
+            .day-slide { padding: 14px 14px; }
+            .day-slide .day-image { height: 120px; }
+            .day-slide h3 { font-size: 1.1rem; }
+            .day-slide .day-desc { font-size: 0.88rem; }
+            .day-slide .day-list { max-height: 200px; }
+            .day-slide .day-list li { font-size: 0.82rem; padding: 5px 10px; gap: 8px; }
+            .day-slide .day-list li i { font-size: 0.75rem; width: 16px; }
+            .carousel-nav { gap: 12px; margin-top: 14px; }
+            .carousel-nav button { width: 38px; height: 38px; font-size: 1rem; }
+            .carousel-nav .day-indicator { font-size: 0.75rem; gap: 8px; }
+            .carousel-nav .day-indicator .dot { width: 6px; height: 6px; }
+            .carousel-nav .day-indicator .dot.active { width: 16px; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 0 16px; }
+            .hero { padding: 30px 0 60px; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-stats { flex-direction: column; gap: 10px; }
+            .about-features { flex-direction: column; align-items: stretch; }
+            .about-features div { justify-content: center; }
+            .step-item { padding: 28px 16px; }
+            .testimonial-item { padding: 24px; }
+            .apartments-grid { gap: 30px; }
+            .cta h2 { font-size: 1.8rem; }
+            .footer { font-size: 0.85rem; padding: 24px 0; }
+            .carousel-btn { width: 32px; height: 32px; font-size: 0.8rem; }
+            .carousel-dots { gap: 4px; padding: 4px 8px; }
+            .carousel-dot { width: 6px; height: 6px; }
+            .carousel-dot.active { width: 14px; }
+            .social-icons a { width: 28px; height: 28px; font-size: 0.85rem; }
+            .btn-tour { padding: 12px 16px; font-size: 0.85rem; min-width: 140px; }
+            .btn-tour i { font-size: 1rem; }
+            .modal-header h2 { font-size: 0.95rem; }
+            .modal-close { width: 30px; height: 30px; font-size: 0.85rem; }
+            .modal-body { padding: 10px 12px 16px; }
+            .day-slide { padding: 10px 10px; }
+            .day-slide .day-image { height: 100px; }
+            .day-slide h3 { font-size: 0.95rem; }
+            .day-slide .day-desc { font-size: 0.8rem; }
+            .day-slide .day-list { max-height: 160px; gap: 4px; }
+            .day-slide .day-list li { font-size: 0.75rem; padding: 4px 8px; gap: 6px; border-radius: 8px; }
+            .day-slide .day-list li i { font-size: 0.7rem; width: 14px; }
+            .carousel-nav { gap: 8px; margin-top: 12px; }
+            .carousel-nav button { width: 32px; height: 32px; font-size: 0.8rem; }
+            .carousel-nav .day-indicator { font-size: 0.65rem; gap: 6px; }
+            .carousel-nav .day-indicator .dot { width: 5px; height: 5px; }
+            .carousel-nav .day-indicator .dot.active { width: 14px; }
+        }
+
+        :root { --primary: #123b38; --primary-light: #1d5a53; --primary-dark: #0a2927; --accent: #e8784b; --accent-light: #fbe3d8; --cream: #f7f5ef; --radius: 30px; }
+        .container { max-width: 1280px; }
+        .navbar { width: min(1200px, calc(100% - 32px)); margin: 16px auto 0; padding: 12px 20px; border: 1px solid rgba(18,59,56,.08); border-radius: 22px; box-shadow: 0 10px 32px rgba(18,59,56,.06); }
+        .navbar .container { padding: 0; }.nav-links { gap: 28px; }.nav-links a { color: var(--primary); }.social-icons { display: none; }
+        .hero { padding: 38px 0 92px; background: var(--cream); }.hero-grid { display:block; position:relative; min-height:620px; overflow:hidden; border-radius:34px; background:var(--primary-dark); }.hero-content { position:absolute; z-index:3; left:clamp(28px,6vw,78px); bottom:clamp(36px,7vw,82px); max-width:700px; color:#fff; }.hero-content h1 { color:#fff; font-size:clamp(3rem,6.2vw,6.2rem); letter-spacing:-.06em; }.hero-content p { color:rgba(255,255,255,.88); max-width:620px; }.hero-content .section-badge { color:#fff; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28); }.hero-content .btn-primary { background:var(--accent); }.hero-stats div { color:#fff; }.hero-grid .carousel-wrapper { position:absolute; inset:0; width:100%; height:100%; aspect-ratio:auto; border-radius:0; box-shadow:none; }.hero-grid .carousel-wrapper::after { content:''; position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(90deg,rgba(4,23,22,.78),rgba(4,23,22,.06) 78%); }.hero-grid .carousel-btn,.hero-grid .carousel-dots { z-index:4; }
+        .about,.tours { padding:110px 0; }.tour-card { max-width:920px; border-radius:30px; }.tour-item { border-radius:16px; }.btn-tour,.btn-detail { border-radius:16px; }
+        #apartmentsTrack .carousel-slide:first-child { background-image: url('https://i.postimg.cc/hvn5YT4Q/IMG-4002.jpg') !important; }
+        #apartmentsTrack .carousel-slide:not(:first-child), #apartmentsCarousel .carousel-btn, #apartmentsCarousel .carousel-dots, #apartmentsTrack .slide-number { display: none; }
+        .btn-tour-telegram { background: #229ED9; box-shadow: 0 6px 24px rgba(34, 158, 217, .32); }
+        .btn-tour-telegram:hover { background: #168ac1; }
+        @media (max-width:760px) { .nav-links{display:none}.hero-grid{min-height:640px;border-radius:24px}.hero-content{left:24px;right:24px;bottom:36px}.hero-grid .carousel-wrapper::after{background:linear-gradient(0deg,rgba(4,23,22,.88),rgba(4,23,22,.08) 78%)} }
+    </style>
+</head>
+<body>
+
+    <!-- ========== BACK TO TOP ========== -->
+    <button class="back-to-top" id="backToTop" aria-label="Наверх">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ========== NAVBAR ========== -->
+    <nav class="navbar" id="navbar">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; width: 100%;">
+            <a href="#hero" class="logo">De'<span>Lana</span> Tour</a>
+            <ul class="nav-links">
+                <li><a href="#tours" data-i18n="nav-tours">Тури</a></li>
+                <li><a href="#about" data-i18n="nav-about">Про нас</a></li>
+                <li><a href="#apartments" data-i18n="nav-apartments">Апартаменти</a></li>
+                <li><a href="#faq" data-i18n="nav-faq">FAQ</a></li>
+            </ul>
+            <div class="navbar-right">
+                <div class="social-icons">
+                    <a href="https://t.me/d_g666" target="_blank" class="telegram-icon" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                    <a href="https://wa.me/380666947664" target="_blank" class="whatsapp-icon" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/del.g.s" target="_blank" class="instagram-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/p/1H4JShnsSA/" target="_blank" class="facebook-icon" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                </div>
+                <div class="language-switcher" id="languageSwitcher">
+                    <a href="#" class="active" data-lang="uk">UA</a>
+                    <a href="#" data-lang="sk">SK</a>
+                    <a href="#" data-lang="en">EN</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================================ -->
+    <!-- ========== HERO ========== -->
+    <!-- ============================================================ -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="section-badge" data-i18n="hero-badge">✦ Авторські тури 2026</span>
+                    <h1 data-i18n="hero-title">Мадейра, якої <i>ви ще не бачили</i></h1>
+                    <p data-i18n="hero-text">Вражаючі маршрути, комфортні апартаменти та україномовні гіди — все для вашого ідеального відпочинку на острові вічної весни.</p>
+                    <a href="#tours" class="btn-primary btn-accent" data-i18n="hero-btn">Обрати тур <i class="fas fa-arrow-right"></i></a>
+                    <div class="hero-stats">
+                        <div data-i18n="hero-stat1"><i class="fas fa-users"></i> до 6 осіб</div>
+                        <div data-i18n="hero-stat2"><i class="fas fa-flag"></i> Українські гіди</div>
+                        <div data-i18n="hero-stat3"><i class="fas fa-home"></i> Комфортні апартаменти + трансфер</div>
+                    </div>
+                </div>
+                <div class="carousel-wrapper" id="heroCarousel">
+                    <div class="carousel-track" id="heroTrack">
+                        <div class="carousel-slide" style="background-image: url('https://i.postimg.cc/yYrVqKdh/IMG-3909.avif');"><span class="slide-number">1 / 8</span></div>
+                        <div class="carousel-slide" style="background-image: url('https://i.postimg.cc/4dKqgqxd/IMG-2582.avif');"><span class="slide-number">2 / 8</span></div>
+                        <div class="carousel-slide" style="background-image: url('https://i.postimg.cc/8cMYFvW5/IMG-1874.jpg');"><span class="slide-number">3 / 8</span></div>
+                        <div class="carousel-slide" style="background-image: url('https://i.postimg.cc/dV4xTw7r/IMG-1137.avif');"><span class="slide-number">4 / 8</span></div>
+                        <div class="carousel-slide" style="background-image: url('https://i.postimg.cc/qMGm94x1/IMG-6988.avif');"><span class="slide-number">5 / 8</span></div>
+                        <div class="carousel-slide" style="background-image: url('https://i.postimg.cc/nLNTvznn/IMG-6873.avif');"><span class="slide-number">6 / 8</span></div>
+                        <div class="carousel-slide" style="background-image: url('https://i.postimg.cc/ncKvTdhp/IMG-4093.avif');"><span class="slide-number">7 / 8</span></div>
+                        <div class="carousel-slide" style="background-image: url('https://i.postimg.cc/yYrVqKdh/IMG-3909.avif');"><span class="slide-number">8 / 8</span></div>
+                    </div>
+                    <button class="carousel-btn prev" id="heroPrev" aria-label="Попередній"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-btn next" id="heroNext" aria-label="Наступний"><i class="fas fa-chevron-right"></i></button>
+                    <div class="carousel-dots" id="heroDots"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ========== ABOUT ========== -->
+    <!-- ============================================================ -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-badge" data-i18n="about-badge">✦ Про De'Lana Tour</span>
+                    <h2 data-i18n="about-title">Ми створюємо не просто тури,<br><span>а спогади на все життя</span></h2>
+                    <p data-i18n="about-text1">Мадейра — це острів вічної весни, де зустрічаються океан і гори. Ми обираємо найкращі локації: містичний ліс Fanal, велич Pico do Arieiro, мальовничі левади та затишні рибацькі селища.</p>
+                    <p data-i18n="about-text2">Наша мета — показати вам справжню Мадейру, яку не знайти в стандартних путівниках. Кожен тур створюється з любов'ю до деталей.</p>
+                    <div class="about-features">
+                        <div data-i18n="about-feat1"><i class="fas fa-user-friends"></i> Групи до 6 гостей</div>
+                        <div data-i18n="about-feat2"><i class="fas fa-comments"></i> Україномовні гіди</div>
+                        <div data-i18n="about-feat3"><i class="fas fa-car"></i> Трансфер по острову</div>
+                        <div data-i18n="about-feat4"><i class="fas fa-globe"></i> Мови туру: українська, англійська, словацька</div>
+                    </div>
+                </div>
+                <div class="carousel-wrapper" id="aboutCarousel">
+                    <div class="carousel-track" id="aboutTrack">
+                        <div class="carousel-slide" style="background-image: url('https://i.postimg.cc/mDK18gmf/IMG-2122.jpg');"><span class="slide-number">1 / 7</span></div>
+                        <div class="carousel-slide" style="background-image: url('https://i.postimg.cc/wMhM2ctQ/IMG-7917.avif');"><span class="slide-number">2 / 7</span></div>
+                        <div class="carousel-slide" style="background-image: url('https://i.postimg.cc/W3Sqc7pb/IMG-7936.jpg');"><span class="slide-number">3 / 7</span></div>
+                        <div class="carousel-slide" style="background-image: url('https://i.postimg.cc/0N47Bsfd/IMG-0618.avif');"><span class="slide-number">4 / 7</span></div>
+                        <div class="carousel-slide" style="background-image: url('https://i.postimg.cc/8z83x2yG/IMG-3966.jpg');"><span class="slide-number">5 / 7</span></div>
+                        <div class="carousel-slide" style="background-image: url('https://i.postimg.cc/KYfHkRmv/IMG-8955.avif');"><span class="slide-number">6 / 7</span></div>
+                        <div class="carousel-slide" style="background-image: url('https://i.postimg.cc/xjX9QSP6/IMG-8807.avif');"><span class="slide-number">7 / 7</span></div>
+                    </div>
+                    <button class="carousel-btn prev" id="aboutPrev" aria-label="Попередній"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-btn next" id="aboutNext" aria-label="Наступний"><i class="fas fa-chevron-right"></i></button>
+                    <div class="carousel-dots" id="aboutDots"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ========== TOURS ========== -->
+    <!-- ============================================================ -->
+    <section class="tours" id="tours">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-badge" data-i18n="tours-badge">✦ Оберіть тур</span>
+                <h2 class="section-title" data-i18n="tours-title">Ваш ідеальний тиждень <span>на Мадейрі</span></h2>
+                <p class="section-sub mx-auto" data-i18n="tours-sub">Авторська програма, де кожен день — нова емоція!</p>
+            </div>
+
+            <div class="tour-card">
+                <h3 data-i18n="tours-card-title">🌿 Сім днів гармонії</h3>
+                <p data-i18n="tours-card-text">Проживання в комфортних апартаментах по одному в кімнаті з вартістю 790 євро з особи, або 490 євро при проживанні по двоє в кімнаті;<br>5 екскурсій;<br>супровід гіда та підтримка 24/7;<br>страхування на маршрутах наземних екскурсій;<br>Також є можливість окремо замовити індивідуальні екскурсії та апартаменти без туру.</p>
+                <div class="price">€790 <small data-i18n="tours-price">/ особа</small></div>
+
+                <div class="tour-list">
+                    <div class="tour-item">
+                        <div class="tour-info">
+                            <span class="date" data-i18n="tour-date1">📅 27 липня – 5 серпня</span>
+                            <div class="spots">
+                                <span class="total" data-i18n="spots-total">6 місць</span>
+                                <span class="bar"><span class="fill" style="width: 50%;"></span></span>
+                                <span class="available" data-i18n="spots-available-3">3 вільні</span>
+                            </div>
+                        </div>
+                        <div class="tour-actions">
+                            <button class="btn-detail" data-tour="1" data-i18n="tours-cta-details"><i class="fas fa-info-circle"></i> Детальніше</button>
+                        </div>
+                    </div>
+
+                    <div class="tour-item">
+                        <div class="tour-info">
+                            <span class="date" data-i18n="tour-date2">📅 23 вересня – 1 жовтня</span>
+                            <div class="spots">
+                                <span class="total" data-i18n="spots-total">6 місць</span>
+                                <span class="bar"><span class="fill" style="width: 100%;"></span></span>
+                                <span class="available" data-i18n="spots-available-6">6 вільні</span>
+                            </div>
+                        </div>
+                        <div class="tour-actions">
+                            <button class="btn-detail" data-tour="2" data-i18n="tours-cta-details"><i class="fas fa-info-circle"></i> Детальніше</button>
+                        </div>
+                    </div>
+
+                    <div class="tour-item">
+                        <div class="tour-info">
+                            <span class="date" data-i18n="tour-date3">📅 15 жовтня – 22 жовтня</span>
+                            <div class="spots">
+                                <span class="total" data-i18n="spots-total">6 місць</span>
+                                <span class="bar"><span class="fill" style="width: 100%;"></span></span>
+                                <span class="available" data-i18n="spots-available-6">6 вільні</span>
+                            </div>
+                        </div>
+                        <div class="tour-actions">
+                            <button class="btn-detail" data-tour="3" data-i18n="tours-cta-details"><i class="fas fa-info-circle"></i> Детальніше</button>
+                        </div>
+                    </div>
+
+                    <div class="tour-item">
+                        <div class="tour-info">
+                            <span class="date" data-i18n="tour-date4">📅 11 грудня – 18 грудня</span>
+                            <div class="spots">
+                                <span class="total" data-i18n="spots-total">6 місць</span>
+                                <span class="bar"><span class="fill" style="width: 100%;"></span></span>
+                                <span class="available" data-i18n="spots-available-6">6 вільні</span>
+                            </div>
+                        </div>
+                        <div class="tour-actions">
+                            <button class="btn-detail" data-tour="4" data-i18n="tours-cta-details"><i class="fas fa-info-circle"></i> Детальніше</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tour-cta">
+                    <a href="https://t.me/d_g666" target="_blank" class="btn-tour btn-tour-telegram" data-i18n="tours-cta-telegram">
+                        <i class="fab fa-telegram-plane"></i> Забронювати в Telegram
+                    </a>
+                    <a href="https://wa.me/380666947664" target="_blank" class="btn-tour btn-tour-whatsapp" data-i18n="tours-cta-whatsapp">
+                        <i class="fab fa-whatsapp"></i> Забронювати в WhatsApp
+                    </a>
+                    <a href="https://www.instagram.com/del.g.s" target="_blank" class="btn-tour btn-tour-instagram" data-i18n="tours-cta-instagram">
+                        <i class="fab fa-instagram"></i> Забронювати в Instagram
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ========== МОДАЛЬНЕ ВІКНО ========== -->
+    <!-- ============================================================ -->
+    <div class="modal-overlay" id="tourModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 data-i18n="modal-title">🌿 Деталі туру <span>“Сім днів гармонії”</span></h2>
+                <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="day-carousel">
+                    <div class="day-track" id="dayTrack">
+                        <!-- ДЕНЬ 1 -->
+                        <div class="day-slide">
+                            <div class="day-image" style="background-image: url('https://i.postimg.cc/0NLhqr0r/IMG-7480.jpg');"></div>
+                            <span class="day-number" data-i18n="day1-number">День 1</span>
+                            <h3 data-i18n="day1-title">Перше побачення з Мадейрою на краю Атлантики</h3>
+                            <ul class="day-list">
+                                <li data-i18n="day1-stop1"><i class="fas fa-plane"></i> <strong>Aeroporto Internacional da Madeira - Cristiano Ronaldo</strong> — Тепла зустріч з керівником вашої групи та трансфер до апартаментів.</li>
+                            </ul>
+                        </div>
+
+                        <!-- ДЕНЬ 2 -->
+                        <div class="day-slide">
+                            <div class="day-image" style="background-image: url('https://i.postimg.cc/VNbH4mPy/IMG-4478.avif');"></div>
+                            <span class="day-number" data-i18n="day2-number">День 2</span>
+                            <h3 data-i18n="day2-title">Магія західної Мадейри · 09:00–17:00</h3>
+                            <ul class="day-list">
+                                <li data-i18n="day2-stop1"><i class="fas fa-clock"></i> <strong>09:00 — Фуншал</strong> — Виїзд з готелю в напрямку дикої північно-західної частини Мадейри.</li>
+                                <li data-i18n="day2-stop2"><i class="fas fa-tree"></i> <strong>10:00 — Лавровий ліс Фанал</strong> — туман, стародавні дерева та прогулянка як у казці. Залежно від погодних умов ця локація може бути перенесена на завершення маршруту.</li>
+                                <li data-i18n="day2-stop3"><i class="fas fa-mountain"></i> <strong>11:30 — скелі Ilhéus da Ribeira da Janela</strong> — кажуть саме тут присутня особлива сила, що зцілює та надихає.</li>
+                                <li data-i18n="day2-stop4"><i class="fas fa-water"></i> <strong>12:30 — Véu da Noiva</strong> — один з тих водоспадів, що зачаровує красою.</li>
+                                <li data-i18n="day2-stop5"><i class="fas fa-swimmer"></i> <strong>13:00 — Порту-Моніш</strong> — саме тут розташовані природні лавові басейни, утворені вулканічними породами. Океанська вода природним чином наповнює басейни, створюючи унікальне місце для купання. Можливість купання залежить від погодних умов.</li>
+                                <li data-i18n="day2-stop6"><i class="fas fa-utensils"></i> <strong>14:30 — Обід</strong> — страви ресторану знайомлять з місцевими кулінарними традиціями та дарують незабутні враження.</li>
+                                <li data-i18n="day2-stop7"><i class="fas fa-sun"></i> <strong>16:00 — Понта-ду-Сол</strong> — Якщо дозволить час, відвідаємо одне з найсонячніших і наймальовничіших містечок Мадейри. Кольорові будинки, набережна, старовинна архітектура та вечірнє світло створюють прекрасну атмосферу для завершення дня.</li>
+                                <li data-i18n="day2-stop8"><i class="fas fa-car"></i> <strong>17:00 — Повернення до Фуншалу</strong></li>
+                            </ul>
+                        </div>
+
+                        <!-- ДЕНЬ 3 -->
+                        <div class="day-slide">
+                            <div class="day-image" style="background-image: url('https://i.postimg.cc/xdHtM5M5/IMG-2422.avif');"></div>
+                            <span class="day-number" data-i18n="day3-number">День 3</span>
+                            <h3 data-i18n="day3-title">Традиції та краєвиди східної Мадейри · 09:00–17:00</h3>
+                            <ul class="day-list">
+                                <li data-i18n="day3-desc" style="background: var(--accent-light); border-radius: 12px; padding: 12px 16px; font-style: italic; color: var(--text-soft); font-size: 0.9rem; border: none; display: block; width: 100%;"><i class="fas fa-info-circle" style="color: var(--accent);"></i> Цей день присвячений східній частині острова. Ми познайомимося з традиційною архітектурою Мадейри, побачимо скелясте північне узбережжя, відвідаємо ромовий завод, відчуємо атмосферу серфінгового містечка та вирушимо до знаменитого «хвоста дракона».</li>
+                                <li data-i18n="day3-stop1"><i class="fas fa-clock"></i> <strong>10:00 — Сантана та Quinta do Furão</strong> — Першою зупинкою стане Сантана — автентичне містечко, відоме традиційними трикутними будиночками із солом'яними дахами. Також відвідаємо мальовничу локацію біля Quinta do Furão, звідки відкриваються прекрасні краєвиди на північне узбережжя.</li>
+                                <li data-i18n="day3-stop2"><i class="fas fa-eye"></i> <strong>11:30 — Miradouro do Guindaste</strong> — Скляний майданчик на краю скелі відкриває панорамний вид на океан, зелені схили, водоспади та драматичне північне узбережжя острова.</li>
+                                <li data-i18n="day3-stop3"><i class="fas fa-wine-bottle"></i> <strong>12:00 — Порту-да-Круш</strong> — атмосферне приокеанське містечко, відоме своїми хвилями, чорними скелями, серфінговими пляжами та традиційним виробництвом рому. Ми відвідаємо один із найстаріших ромових заводів Мадейри.</li>
+                                <li data-i18n="day3-stop4"><i class="fas fa-utensils"></i> <strong>13:30 — Обід</strong> — заплановано обід в одному з найкращих ресторанів Північно-Східної частини острова.</li>
+                                <li data-i18n="day3-stop5"><i class="fas fa-umbrella-beach"></i> <strong>15:00 — Пляж Prainha do Caniçal</strong> — Якщо дозволять час і погодні умови, зробимо зупинку на одному з найромантичніших пляжів східної Мадейри. Prainha do Caniçal — невеликий пляж із темним вулканічним піском, теплими відтінками скель і затишною атмосферою.</li>
+                                <li data-i18n="day3-stop6"><i class="fas fa-dragon"></i> <strong>16:00 — Ponta de São Lourenço</strong> — знаменитий «хвіст дракона» Мадейри. Саме цю частину Мадейри часто видно з літака під час заходу на посадку в аеропорт острова. Місцевість також відома своєю кінематографічністю. Тут проходили знімання фільму «Мобі Дік» 1956 року, а також окремих сцен великого кінопроєкту у 2023 році.</li>
+                                <li data-i18n="day3-stop7"><i class="fas fa-car"></i> <strong>17:00 — Повернення до Фуншала</strong></li>
+                            </ul>
+                        </div>
+
+                        <!-- ДЕНЬ 4 -->
+                        <div class="day-slide">
+                            <div class="day-image" style="background-image: url('https://i.postimg.cc/BvxBX6G6/IMG-8579.avif');"></div>
+                            <span class="day-number" data-i18n="day4-number">День 4</span>
+                            <h3 data-i18n="day4-title">Панорами, узбережжя та Pico do Arieiro</h3>
+                            <ul class="day-list">
+                                <li data-i18n="day4-desc" style="background: var(--accent-light); border-radius: 12px; padding: 12px 16px; font-style: italic; color: var(--text-soft); font-size: 0.9rem; border: none; display: block; width: 100%;"><i class="fas fa-info-circle" style="color: var(--accent);"></i> Цього дня ми побачимо гірське серце острова, одну з найвищих скель Європи, величну статую Христа та завершимо подорож на вершині Pico do Arieiro.</li>
+                                <li data-i18n="day4-stop1"><i class="fas fa-clock"></i> <strong>13:00 — Eira do Serrado</strong> — звідси відкривається захопливий вид на долину та село Curral das Freiras, оточене високими гірськими вершинами та легендами.</li>
+                                <li data-i18n="day4-stop2"><i class="fas fa-mountain"></i> <strong>14:30 — Cabo Girão</strong> — одне з найвражаючих оглядових місць Мадейри, розташоване на висоті близько 589 метрів над Атлантичним океаном.</li>
+                                <li data-i18n="day4-stop3"><i class="fas fa-cross"></i> <strong>15:30 — Cristo Rei</strong> — велична статуя Христа, яка благославляє на пригоди та подорожі.</li>
+                                <li data-i18n="day4-stop4"><i class="fas fa-fire"></i> <strong>16:30 — Вечеря в колибі</strong> — де відчувається справжній вайб гір Мадейри, а від ароматів навіть ситий стає голодним!</li>
+                                <li data-i18n="day4-stop5"><i class="fas fa-cloud-sun"></i> <strong>18:00 — Pico do Arieiro</strong> — Фінальна локація дня, одна з найвищих вершин Мадейри, розташована на висоті 1818 метрів. Це місце, де хмари можуть опинитися просто під ногами, а навколишні гірські вершини здаються безмежними.</li>
+                                <li data-i18n="day4-stop6"><i class="fas fa-car"></i> <strong>19:00 — Повернення до готелю</strong></li>
+                            </ul>
+                        </div>
+
+                        <!-- ДЕНЬ 5 -->
+                        <div class="day-slide">
+                            <div class="day-image" style="background-image: url('https://i.postimg.cc/gkQVsRzb/IMG-5588.avif');"></div>
+                            <span class="day-number" data-i18n="day5-number">День 5</span>
+                            <h3 data-i18n="day5-title">Фуншал, дегустації та палац Монте</h3>
+                            <ul class="day-list">
+                                <li data-i18n="day5-stop1"><i class="fas fa-clock"></i> <strong>09:00–12:00 — Фуншал</strong> — у першій половині дня ми познайомимося з історичним центром столиці Мадейри, її архітектурою, садами, ринками та атмосферними вулицями. Саме час купувати сувеніри та подарунки!</li>
+                                <li data-i18n="day5-stop2"><i class="fas fa-palace"></i> <strong>12:00–15:00 — Палац Монте</strong> — ботанічний сад, який нікого не залишає байдужим, а історія вражає та захоплює! За бажанням можна здійснити спуск на знаменитих плетених санях-тобоганах.</li>
+                                <li data-i18n="day5-stop3"><i class="fas fa-car"></i> <strong>17:00 — Повернення до готелю</strong></li>
+                            </ul>
+                        </div>
+
+                        <!-- ДЕНЬ 6 -->
+                        <div class="day-slide">
+                            <div class="day-image" style="background-image: url('https://i.postimg.cc/K8tM5Hp7/IMG-5626.avif');"></div>
+                            <span class="day-number" data-i18n="day6-number">День 6</span>
+                            <h3 data-i18n="day6-title">Програма «Сюрприз» або вільний день :)</h3>
+                            <ul class="day-list">
+                                <li data-i18n="day6-stop1"><i class="fas fa-gift"></i> <strong>Довіртесь нам</strong> — ви не пошкодуєте!</li>
+                            </ul>
+                        </div>
+
+                        <!-- ДЕНЬ 7 -->
+                        <div class="day-slide">
+                            <div class="day-image" style="background-image: url('https://i.postimg.cc/DyksbhBw/IMG-7006.avif');"></div>
+                            <span class="day-number" data-i18n="day7-number">День 7</span>
+                            <h3 data-i18n="day7-title">Завершення подорожі</h3>
+                            <ul class="day-list">
+                                <li data-i18n="day7-stop1"><i class="fas fa-clock"></i> <strong>Вільний час</strong> — підготовка до трансферу в аеропорт.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-nav">
+                    <button id="prevDay"><i class="fas fa-chevron-left"></i></button>
+                    <div class="day-indicator">
+                        <span id="dayCounter">1 / 7</span>
+                        <div class="dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <button id="nextDay"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- ========== STEPS ========== -->
+    <!-- ============================================================ -->
+    <section class="steps" id="steps">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-badge" data-i18n="steps-badge">✦ План дій</span>
+                <h2 class="section-title" data-i18n="steps-title">Як почати <span>вашу подорож?</span></h2>
+                <p class="section-sub mx-auto" data-i18n="steps-sub">Чотири прості кроки — і ви на Мадейрі</p>
+            </div>
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <h4 data-i18n="step1-title">Заявка</h4>
+                    <p data-i18n="step1-text">Оберіть дати та залиште заявку на сайті або напишіть нам у Telegram для планування індивідуального туру в зручні для вас дати.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <h4 data-i18n="step2-title">Узгодження</h4>
+                    <p data-i18n="step2-text">Ми зателефонуємо, обговоримо деталі та запропонуємо найкращі умови співпраці для вашого відпочинку.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <h4 data-i18n="step3-title">Бронювання</h4>
+                    <p data-i18n="step3-text">Підписуємо договір, ви вносите передплату 10% — місце закріплене і ви вже готуєтесь до подорожі.</p>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">4</div>
+                    <h4 data-i18n="step4-title">Мадейра чекає</h4>
+                    <p data-i18n="step4-text">Ви отримуєте повний гайд, підтримку наших співробітників та супровід протягом всієї подорожі.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ========== TESTIMONIALS ========== -->
+    <!-- ============================================================ -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-badge" data-i18n="testimonials-badge">✦ Відгуки</span>
+                <h2 class="section-title" data-i18n="testimonials-title">Емоції, які <span>залишаються з вами</span></h2>
+                <p class="section-sub mx-auto" data-i18n="testimonials-sub">Реальні історії наших мандрівників</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <i class="fas fa-quote-left"></i>
+                    <p data-i18n="testimonial1-text">“Ліс Fanal — це щось неймовірне. Ми стояли і мовчали, слухаючи тишу. Дякую De'Lana Tour за цю магію.”</p>
+                    <div class="author" data-i18n="testimonial1-author">— Олена та Сергій, Київ</div>
+                </div>
+                <div class="testimonial-item">
+                    <i class="fas fa-quote-left"></i>
+                    <p data-i18n="testimonial2-text">“Все було на найвищому рівні: апартаменти, маршрути, гід. Ми вже плануємо наступний тур з вами!”</p>
+                    <div class="author" data-i18n="testimonial2-author">— Андрій, Львів</div>
+                </div>
+                <div class="testimonial-item">
+                    <i class="fas fa-quote-left"></i>
+                    <p data-i18n="testimonial3-text">“Найкращий відпочинок за останні роки. Ми побачили Мадейру очима місцевих — це безцінно.”</p>
+                    <div class="author" data-i18n="testimonial3-author">— Катерина, Одеса</div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 40px;">
+                <a href="https://www.facebook.com/share/p/1H4JShnsSA/" target="_blank" class="facebook-link" data-i18n="testimonials-facebook">
+                    <i class="fab fa-facebook"></i> Дивитися всі відгуки на Facebook (100+)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ========== APARTMENTS ========== -->
+    <!-- ============================================================ -->
+    <section class="apartments" id="apartments">
+        <div class="container">
+            <div class="apartments-grid">
+                <div class="carousel-wrapper" id="apartmentsCarousel">
+                    <div class="carousel-track" id="apartmentsTrack">
+                        <div class="carousel-slide" style="background-image: url('https://i.postimg.cc/qMGm94x1/IMG-6988.avif');"><span class="slide-number">1 / 5</span></div>
+                        <div class="carousel-slide" style="background-image: url('https://i.postimg.cc/nLNTvznn/IMG-6873.avif');"><span class="slide-number">2 / 5</span></div>
+                        <div class="carousel-slide" style="background-image: url('https://i.postimg.cc/ncKvTdhp/IMG-4093.avif');"><span class="slide-number">3 / 5</span></div>
+                        <div class="carousel-slide" style="background-image: url('https://i.postimg.cc/yYrVqKdh/IMG-3909.avif');"><span class="slide-number">4 / 5</span></div>
+                        <div class="carousel-slide" style="background-image: url('https://i.postimg.cc/4dKqgqxd/IMG-2582.avif');"><span class="slide-number">5 / 5</span></div>
+                    </div>
+                    <button class="carousel-btn prev" id="apartmentsPrev" aria-label="Попередній"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-btn next" id="apartmentsNext" aria-label="Наступний"><i class="fas fa-chevron-right"></i></button>
+                    <div class="carousel-dots" id="apartmentsDots"></div>
+                </div>
+                <div class="apartments-content">
+                    <span class="section-badge" data-i18n="apartments-badge">✦ Ваші апартаменти</span>
+                    <h2 data-i18n="apartments-title">Прокидайтеся <span>з видом на океан</span></h2>
+                    <p data-i18n="apartments-text1">Ми підберемо найкращий дім для вашого відпочинку на Мадейрі!<br>Підберемо за запитом проживання в апартаментах, на віллі, чи в готелі!</p>
+                    <p class="apartments-availability" style="background: var(--accent-light); border-radius: var(--radius); padding: 24px 28px; border: 2px solid var(--accent); margin-top: 20px;" data-i18n="apartments-availability"><strong>🏡 Також, є можливість забронювати апартаменти без туру.</strong><br><br>📅 <strong>Доступні дати:</strong><br><br>🏠 <strong>Апартаменти 1:</strong> 1 – 7 серпня, 17 – 27 серпня<br><br>🏠 <strong>Апартаменти 2:</strong> 27 липня – 5 серпня, 23 вересня – 1 жовтня<br><br>📩 Додаткова інформація за запитом.</p>
+                    <a href="#tours" class="btn-primary" style="margin-top: 12px;" data-i18n="apartments-btn">Забронювати апартаменти</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ========== FAQ ========== -->
+    <!-- ============================================================ -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-badge" data-i18n="faq-badge">✦ Допомога</span>
+                <h2 class="section-title" data-i18n="faq-title">Відповіді на <span>важливі запитання</span></h2>
+                <p class="section-sub mx-auto" data-i18n="faq-sub">Ми зібрали найчастіші питання, щоб ви почувалися впевнено</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4 data-i18n="faq-q1"><i class="fas fa-plane-departure"></i> Як дістатися до Мадейри?</h4>
+                    <p data-i18n="faq-a1">Ми допомагаємо з пошуком оптимальних рейсів з Варшави, Кракова або Будапешта. Надаємо інструкції та підтримуємо на всіх етапах.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 data-i18n="faq-q2"><i class="fas fa-hiking"></i> Чи потрібна фізична підготовка?</h4>
+                    <p data-i18n="faq-a2">Наші маршрути розраховані на середній рівень. Ви зможете проходити до 10 км у спокійному темпі. Головне — зручне взуття та гарний настрій.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 data-i18n="faq-q3"><i class="fas fa-suitcase"></i> Що брати з собою?</h4>
+                    <p data-i18n="faq-a3">Трекінгове взуття, вітрівка, фліска, купальник, сонцезахисний крем та окуляри. Ми надсилаємо повний чек-лист перед поїздкою.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 data-i18n="faq-q4"><i class="fas fa-credit-card"></i> Які умови оплати?</h4>
+                    <p data-i18n="faq-a4">Передоплата 10% для бронювання. Решту — за 2 тижні до туру або готівкою на місці. Працюємо з міжнародними платіжними системами.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 data-i18n="faq-q5"><i class="fas fa-passport"></i> Чи потрібна віза?</h4>
+                    <p data-i18n="faq-a5">Для громадян України з біометричним паспортом — безвізовий режим на 90 днів. Обов'язкова наявність туристичної страховки.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 data-i18n="faq-q6"><i class="fas fa-shield-alt"></i> Чи безпечно?</h4>
+                    <p data-i18n="faq-a6">Так, Мадейра — один з найбезпечніших регіонів Європи. Ми завжди на зв'язку 24/7 та маємо локальну підтримку.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ========== CTA ========== -->
+    <!-- ============================================================ -->
+    <section class="cta" id="cta">
+        <div class="container">
+            <h2 data-i18n="cta-title">Мадейра <span>чекає на вас</span></h2>
+            <p data-i18n="cta-text">Напишіть нам у Telegram, WhatsApp або в Instagram — ми відповімо на всі запитання за 5 хвилин</p>
+            <div class="cta-buttons">
+                <a href="https://t.me/d_g666" target="_blank" class="cta-btn cta-telegram" data-i18n="cta-telegram"><i class="fab fa-telegram-plane"></i> Telegram</a>
+                <a href="https://wa.me/380666947664" target="_blank" class="cta-btn cta-whatsapp" data-i18n="cta-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://www.instagram.com/del.g.s" target="_blank" class="cta-btn cta-instagram" data-i18n="cta-instagram"><i class="fab fa-instagram"></i> Instagram</a>
+                <a href="https://www.facebook.com/share/p/1H4JShnsSA/" target="_blank" class="cta-btn cta-facebook" data-i18n="cta-facebook"><i class="fab fa-facebook"></i> Відгуки тут 🍀</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- ========== FOOTER ========== -->
+    <!-- ============================================================ -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 <span>De'Lana Tour</span> <span data-i18n="footer-text">— авторські тури на Мадейру.</span> <span data-i18n="footer-break"><br></span><span data-i18n="footer-sub">Зроблено з душею для ваших подорожей.</span></p>
+            <div class="footer-social">
+                <a href="https://t.me/d_g666" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://wa.me/380666947664" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/del.g.s" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/share/p/1H4JShnsSA/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            </div>
+            <p style="margin-top: 12px; font-size: 0.85rem;">
+                <a href="mailto:tourdelana@gmail.com"><i class="fas fa-envelope"></i> tourdelana@gmail.com</a>
+                &nbsp;·&nbsp;
+                <a href="tel:+380666947664"><i class="fas fa-phone"></i> +38 066 694 76 64</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- ============================================================ -->
+    <!-- ========== JAVASCRIPT ========== -->
+    <!-- ============================================================ -->
+    <script>
+        (function() {
+            'use strict';
+
+            function initCarousel(trackId, prevId, nextId, dotsId) {
+                const track = document.getElementById(trackId);
+                if (!track) return;
+                const slides = track.querySelectorAll('.carousel-slide');
+                const total = slides.length;
+                const prevBtn = document.getElementById(prevId);
+                const nextBtn = document.getElementById(nextId);
+                const dotsContainer = document.getElementById(dotsId);
+                let current = 0;
+                let isTransitioning = false;
+
+                if (dotsContainer) {
+                    dotsContainer.innerHTML = '';
+                    for (let i = 0; i < total; i++) {
+                        const dot = document.createElement('button');
+                        dot.classList.add('carousel-dot');
+                        dot.setAttribute('data-index', i);
+                        dot.setAttribute('aria-label', 'Слайд ' + (i + 1));
+                        if (i === 0) dot.classList.add('active');
+                        dot.addEventListener('click', function() {
+                            goTo(parseInt(this.getAttribute('data-index')));
+                        });
+                        dotsContainer.appendChild(dot);
+                    }
+                }
+
+                function updateDots(index) {
+                    if (!dotsContainer) return;
+                    const dots = dotsContainer.querySelectorAll('.carousel-dot');
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === index);
+                    });
+                }
+
+                function goTo(index) {
+                    if (isTransitioning) return;
+                    if (index < 0) index = total - 1;
+                    if (index >= total) index = 0;
+                    current = index;
+                    isTransitioning = true;
+                    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+                    updateDots(current);
+                    slides.forEach((slide, i) => {
+                        const num = slide.querySelector('.slide-number');
+                        if (num) num.textContent = (i + 1) + ' / ' + total;
+                    });
+                    setTimeout(() => { isTransitioning = false; }, 500);
+                }
+
+                if (prevBtn) prevBtn.addEventListener('click', function() { goTo(current - 1); });
+                if (nextBtn) nextBtn.addEventListener('click', function() { goTo(current + 1); });
+
+                document.addEventListener('keydown', function(e) {
+                    const wrapper = track.closest('.carousel-wrapper');
+                    if (!wrapper) return;
+                    const rect = wrapper.getBoundingClientRect();
+                    const isVisible = rect.width > 0 && rect.height > 0 && rect.bottom > 0 && rect.top < window
+                        .innerHeight;
+                    if (!isVisible) return;
+                    if (e.key === 'ArrowLeft') { e.preventDefault();
+                        goTo(current - 1); } else if (e.key === 'ArrowRight') { e.preventDefault();
+                        goTo(current + 1); }
+                });
+
+                goTo(0);
+            }
+
+            initCarousel('heroTrack', 'heroPrev', 'heroNext', 'heroDots');
+            initCarousel('aboutTrack', 'aboutPrev', 'aboutNext', 'aboutDots');
+            initCarousel('apartmentsTrack', 'apartmentsPrev', 'apartmentsNext', 'apartmentsDots');
+
+            document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 80;
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset -
+                            navbarHeight;
+                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                    }
+                });
+            });
+
+            const backToTopBtn = document.getElementById('backToTop');
+            if (backToTopBtn) {
+                window.addEventListener('scroll', function() {
+                    backToTopBtn.classList.toggle('visible', window.scrollY > 400);
+                });
+                backToTopBtn.addEventListener('click', function() {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            function updateActiveLink() {
+                let currentId = '';
+                const scrollPos = window.scrollY + 100;
+                sections.forEach(section => {
+                    const top = section.offsetTop;
+                    const height = section.offsetHeight;
+                    if (scrollPos >= top && scrollPos < top + height) {
+                        currentId = section.getAttribute('id');
+                    }
+                });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === '#' + currentId) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            window.addEventListener('scroll', updateActiveLink);
+            window.addEventListener('load', updateActiveLink);
+
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', function() {
+                navbar.classList.toggle('scrolled', window.scrollY > 50);
+            });
+
+            const modal = document.getElementById('tourModal');
+            const modalClose = document.getElementById('modalClose');
+            const detailButtons = document.querySelectorAll('.btn-detail');
+            const track = document.getElementById('dayTrack');
+            const dayCarousel = track.closest('.day-carousel');
+            const slides = track.querySelectorAll('.day-slide');
+            const totalDays = slides.length;
+            let currentDay = 0;
+            let isTransitioning = false;
+
+            const prevBtn = document.getElementById('prevDay');
+            const nextBtn = document.getElementById('nextDay');
+            const dayCounter = document.getElementById('dayCounter');
+            const dots = document.querySelectorAll('.day-indicator .dot');
+
+            detailButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    goToDay(0);
+                });
+            });
+
+            function closeModal() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            modalClose.addEventListener('click', closeModal);
+            modal.addEventListener('click', function(e) {
+                if (e.target === this) closeModal();
+            });
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') closeModal();
+                if (modal.classList.contains('active')) {
+                    if (e.key === 'ArrowLeft') goToDay(currentDay - 1);
+                    if (e.key === 'ArrowRight') goToDay(currentDay + 1);
+                }
+            });
+
+            function goToDay(index) {
+                if (isTransitioning) return;
+                if (index < 0) index = totalDays - 1;
+                if (index >= totalDays) index = 0;
+                currentDay = index;
+                isTransitioning = true;
+
+                track.style.transform = 'translate3d(-' + (currentDay * dayCarousel.clientWidth) + 'px, 0, 0)';
+
+                dayCounter.textContent = (currentDay + 1) + ' / ' + totalDays;
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === currentDay);
+                });
+
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 400);
+            }
+
+            prevBtn.addEventListener('click', function() { goToDay(currentDay - 1); });
+            nextBtn.addEventListener('click', function() { goToDay(currentDay + 1); });
+
+            window.addEventListener('resize', function() {
+                track.style.transform = 'translate3d(-' + (currentDay * dayCarousel.clientWidth) + 'px, 0, 0)';
+            });
+
+            goToDay(0);
+
+            // ============================================================
+            // ========== ПОВНИЙ ПЕРЕКЛАД ДЛЯ ВСІХ МОВ ==========
+            // ============================================================
+
+            const translations = {
+                uk: {
+                    'nav-tours': 'Тури',
+                    'nav-about': 'Про нас',
+                    'nav-apartments': 'Апартаменти',
+                    'nav-faq': 'FAQ',
+                    'hero-badge': '✦ Авторські тури 2026',
+                    'hero-title': 'Мадейра, якої <i>ви ще не бачили</i>',
+                    'hero-text': 'Вражаючі маршрути, комфортні апартаменти та україномовні гіди — все для вашого ідеального відпочинку на острові вічної весни.',
+                    'hero-btn': 'Обрати тур <i class="fas fa-arrow-right"></i>',
+                    'hero-stat1': '<i class="fas fa-users"></i> до 6 осіб',
+                    'hero-stat2': '<i class="fas fa-flag"></i> Українські гіди',
+                    'hero-stat3': '<i class="fas fa-home"></i> Комфортні апартаменти + трансфер',
+                    'about-badge': '✦ Про De\'Lana Tour',
+                    'about-title': 'Ми створюємо не просто тури,<br><span>а спогади на все життя</span>',
+                    'about-text1': 'Мадейра — це острів вічної весни, де зустрічаються океан і гори. Ми обираємо найкращі локації: містичний ліс Fanal, велич Pico do Arieiro, мальовничі левади та затишні рибацькі селища.',
+                    'about-text2': 'Наша мета — показати вам справжню Мадейру, яку не знайти в стандартних путівниках. Кожен тур створюється з любов\'ю до деталей.',
+                    'about-feat1': '<i class="fas fa-user-friends"></i> Групи до 6 гостей',
+                    'about-feat2': '<i class="fas fa-comments"></i> Україномовні гіди',
+                    'about-feat3': '<i class="fas fa-car"></i> Трансфер по острову',
+                    'about-feat4': '<i class="fas fa-globe"></i> Мови туру: українська, англійська, словацька',
+                    'tours-badge': '✦ Оберіть тур',
+                    'tours-title': 'Ваш ідеальний тиждень <span>на Мадейрі</span>',
+                    'tours-sub': 'Авторська програма, де кожен день — нова емоція!',
+                    'tours-card-title': '🌿 Сім днів гармонії',
+                    'tours-card-text': 'Проживання в комфортних апартаментах по одному в кімнаті з вартістю 790 євро з особи, або 490 євро при проживанні по двоє в кімнаті;<br>5 екскурсій;<br>супровід гіда та підтримка 24/7;<br>страхування на маршрутах наземних екскурсій;<br>Також є можливість окремо замовити індивідуальні екскурсії та апартаменти без туру.',
+                    'tours-price': '/ особа',
+                    'tour-date1': '📅 27 липня – 5 серпня',
+                    'tour-date2': '📅 23 вересня – 1 жовтня',
+                    'tour-date3': '📅 15 жовтня – 22 жовтня',
+                    'tour-date4': '📅 11 грудня – 18 грудня',
+                    'spots-total': '6 місць',
+                    'spots-available-3': '3 вільні',
+                    'spots-available-6': '6 вільні',
+                    'tours-cta-telegram': '<i class="fab fa-telegram-plane"></i> Забронювати в Telegram',
+                    'tours-cta-whatsapp': '<i class="fab fa-whatsapp"></i> Забронювати в WhatsApp',
+                    'tours-cta-instagram': '<i class="fab fa-instagram"></i> Забронювати в Instagram',
+                    'tours-cta-details': '<i class="fas fa-info-circle"></i> Детальніше',
+                    'modal-title': '🌿 Деталі туру <span>“Сім днів гармонії”</span>',
+                    'day1-number': 'День 1',
+                    'day1-title': 'Перше побачення з Мадейрою на краю Атлантики',
+                    'day1-stop1': '<i class="fas fa-plane"></i> <strong>Aeroporto Internacional da Madeira - Cristiano Ronaldo</strong> — Тепла зустріч з керівником вашої групи та трансфер до апартаментів.',
+                    'day2-number': 'День 2',
+                    'day2-title': 'Магія західної Мадейри · 09:00–17:00',
+                    'day2-stop1': '<i class="fas fa-clock"></i> <strong>09:00 — Фуншал</strong> — Виїзд з готелю в напрямку дикої північно-західної частини Мадейри.',
+                    'day2-stop2': '<i class="fas fa-tree"></i> <strong>10:00 — Лавровий ліс Фанал</strong> — туман, стародавні дерева та прогулянка як у казці. Залежно від погодних умов ця локація може бути перенесена на завершення маршруту.',
+                    'day2-stop3': '<i class="fas fa-mountain"></i> <strong>11:30 — скелі Ilhéus da Ribeira da Janela</strong> — кажуть саме тут присутня особлива сила, що зцілює та надихає.',
+                    'day2-stop4': '<i class="fas fa-water"></i> <strong>12:30 — Véu da Noiva</strong> — один з тих водоспадів, що зачаровує красою.',
+                    'day2-stop5': '<i class="fas fa-swimmer"></i> <strong>13:00 — Порту-Моніш</strong> — саме тут розташовані природні лавові басейни, утворені вулканічними породами. Океанська вода природним чином наповнює басейни, створюючи унікальне місце для купання. Можливість купання залежить від погодних умов.',
+                    'day2-stop6': '<i class="fas fa-utensils"></i> <strong>14:30 — Обід</strong> — страви ресторану знайомлять з місцевими кулінарними традиціями та дарують незабутні враження.',
+                    'day2-stop7': '<i class="fas fa-sun"></i> <strong>16:00 — Понта-ду-Сол</strong> — Якщо дозволить час, відвідаємо одне з найсонячніших і наймальовничіших містечок Мадейри. Кольорові будинки, набережна, старовинна архітектура та вечірнє світло створюють прекрасну атмосферу для завершення дня.',
+                    'day2-stop8': '<i class="fas fa-car"></i> <strong>17:00 — Повернення до Фуншалу</strong>',
+                    'day3-number': 'День 3',
+                    'day3-title': 'Традиції та краєвиди східної Мадейри · 09:00–17:00',
+                    'day3-desc': '<i class="fas fa-info-circle" style="color: var(--accent);"></i> Цей день присвячений східній частині острова. Ми познайомимося з традиційною архітектурою Мадейри, побачимо скелясте північне узбережжя, відвідаємо ромовий завод, відчуємо атмосферу серфінгового містечка та вирушимо до знаменитого «хвоста дракона».',
+                    'day3-stop1': '<i class="fas fa-clock"></i> <strong>10:00 — Сантана та Quinta do Furão</strong> — Першою зупинкою стане Сантана — автентичне містечко, відоме традиційними трикутними будиночками із солом\'яними дахами. Також відвідаємо мальовничу локацію біля Quinta do Furão, звідки відкриваються прекрасні краєвиди на північне узбережжя.',
+                    'day3-stop2': '<i class="fas fa-eye"></i> <strong>11:30 — Miradouro do Guindaste</strong> — Скляний майданчик на краю скелі відкриває панорамний вид на океан, зелені схили, водоспади та драматичне північне узбережжя острова.',
+                    'day3-stop3': '<i class="fas fa-wine-bottle"></i> <strong>12:00 — Порту-да-Круш</strong> — атмосферне приокеанське містечко, відоме своїми хвилями, чорними скелями, серфінговими пляжами та традиційним виробництвом рому. Ми відвідаємо один із найстаріших ромових заводів Мадейри.',
+                    'day3-stop4': '<i class="fas fa-utensils"></i> <strong>13:30 — Обід</strong> — заплановано обід в одному з найкращих ресторанів Північно-Східної частини острова.',
+                    'day3-stop5': '<i class="fas fa-umbrella-beach"></i> <strong>15:00 — Пляж Prainha do Caniçal</strong> — Якщо дозволять час і погодні умови, зробимо зупинку на одному з найромантичніших пляжів східної Мадейри. Prainha do Caniçal — невеликий пляж із темним вулканічним піском, теплими відтінками скель і затишною атмосферою.',
+                    'day3-stop6': '<i class="fas fa-dragon"></i> <strong>16:00 — Ponta de São Lourenço</strong> — знаменитий «хвіст дракона» Мадейри. Саме цю частину Мадейри часто видно з літака під час заходу на посадку в аеропорт острова. Місцевість також відома своєю кінематографічністю. Тут проходили знімання фільму «Мобі Дік» 1956 року, а також окремих сцен великого кінопроєкту у 2023 році.',
+                    'day3-stop7': '<i class="fas fa-car"></i> <strong>17:00 — Повернення до Фуншала</strong>',
+                    'day4-number': 'День 4',
+                    'day4-title': 'Панорами, узбережжя та Pico do Arieiro',
+                    'day4-desc': '<i class="fas fa-info-circle" style="color: var(--accent);"></i> Цього дня ми побачимо гірське серце острова, одну з найвищих скель Європи, величну статую Христа та завершимо подорож на вершині Pico do Arieiro.',
+                    'day4-stop1': '<i class="fas fa-clock"></i> <strong>13:00 — Eira do Serrado</strong> — звідси відкривається захопливий вид на долину та село Curral das Freiras, оточене високими гірськими вершинами та легендами.',
+                    'day4-stop2': '<i class="fas fa-mountain"></i> <strong>14:30 — Cabo Girão</strong> — одне з найвражаючих оглядових місць Мадейри, розташоване на висоті близько 589 метрів над Атлантичним океаном.',
+                    'day4-stop3': '<i class="fas fa-cross"></i> <strong>15:30 — Cristo Rei</strong> — велична статуя Христа, яка благославляє на пригоди та подорожі.',
+                    'day4-stop4': '<i class="fas fa-fire"></i> <strong>16:30 — Вечеря в колибі</strong> — де відчувається справжній вайб гір Мадейри, а від ароматів навіть ситий стає голодним!',
+                    'day4-stop5': '<i class="fas fa-cloud-sun"></i> <strong>18:00 — Pico do Arieiro</strong> — Фінальна локація дня, одна з найвищих вершин Мадейри, розташована на висоті 1818 метрів. Це місце, де хмари можуть опинитися просто під ногами, а навколишні гірські вершини здаються безмежними.',
+                    'day4-stop6': '<i class="fas fa-car"></i> <strong>19:00 — Повернення до готелю</strong>',
+                    'day5-number': 'День 5',
+                    'day5-title': 'Фуншал, дегустації та палац Монте',
+                    'day5-stop1': '<i class="fas fa-clock"></i> <strong>09:00–12:00 — Фуншал</strong> — у першій половині дня ми познайомимося з історичним центром столиці Мадейри, її архітектурою, садами, ринками та атмосферними вулицями. Саме час купувати сувеніри та подарунки!',
+                    'day5-stop2': '<i class="fas fa-palace"></i> <strong>12:00–15:00 — Палац Монте</strong> — ботанічний сад, який нікого не залишає байдужим, а історія вражає та захоплює! За бажанням можна здійснити спуск на знаменитих плетених санях-тобоганах.',
+                    'day5-stop3': '<i class="fas fa-car"></i> <strong>17:00 — Повернення до готелю</strong>',
+                    'day6-number': 'День 6',
+                    'day6-title': 'Програма «Сюрприз» або вільний день :)',
+                    'day6-stop1': '<i class="fas fa-gift"></i> <strong>Довіртесь нам</strong> — ви не пошкодуєте!',
+                    'day7-number': 'День 7',
+                    'day7-title': 'Завершення подорожі',
+                    'day7-stop1': '<i class="fas fa-clock"></i> <strong>Вільний час</strong> — підготовка до трансферу в аеропорт.',
+                    'steps-badge': '✦ План дій',
+                    'steps-title': 'Як почати <span>вашу подорож?</span>',
+                    'steps-sub': 'Чотири прості кроки — і ви на Мадейрі',
+                    'step1-title': 'Заявка',
+                    'step1-text': 'Оберіть дати та залиште заявку на сайті або напишіть нам у Telegram для планування індивідуального туру в зручні для вас дати.',
+                    'step2-title': 'Узгодження',
+                    'step2-text': 'Ми зателефонуємо, обговоримо деталі та запропонуємо найкращі умови співпраці для вашого відпочинку.',
+                    'step3-title': 'Бронювання',
+                    'step3-text': 'Підписуємо договір, ви вносите передплату 10% — місце закріплене і ви вже готуєтесь до подорожі.',
+                    'step4-title': 'Мадейра чекає',
+                    'step4-text': 'Ви отримуєте повний гайд, підтримку наших співробітників та супровід протягом всієї подорожі.',
+                    'testimonials-badge': '✦ Відгуки',
+                    'testimonials-title': 'Емоції, які <span>залишаються з вами</span>',
+                    'testimonials-sub': 'Реальні історії наших мандрівників',
+                    'testimonial1-text': '“Ліс Fanal — це щось неймовірне. Ми стояли і мовчали, слухаючи тишу. Дякую De\'Lana Tour за цю магію.”',
+                    'testimonial1-author': '— Олена та Сергій, Київ',
+                    'testimonial2-text': '“Все було на найвищому рівні: апартаменти, маршрути, гід. Ми вже плануємо наступний тур з вами!”',
+                    'testimonial2-author': '— Андрій, Львів',
+                    'testimonial3-text': '“Найкращий відпочинок за останні роки. Ми побачили Мадейру очима місцевих — це безцінно.”',
+                    'testimonial3-author': '— Катерина, Одеса',
+                    'testimonials-facebook': '<i class="fab fa-facebook"></i> Дивитися всі відгуки на Facebook (100+)',
+                    'apartments-badge': '✦ Ваші апартаменти',
+                    'apartments-title': 'Прокидайтеся <span>з видом на океан</span>',
+                    'apartments-text1': 'Ми підберемо найкращий дім для вашого відпочинку на Мадейрі!<br>Підберемо за запитом проживання в апартаментах, на віллі, чи в готелі!',
+                    'apartments-btn': 'Забронювати апартаменти',
+                    'apartments-availability': '<strong>🏡 Також, є можливість забронювати апартаменти без туру.</strong><br><br>📅 <strong>Доступні дати:</strong><br><br>🏠 <strong>Апартаменти 1:</strong> 1 – 7 серпня, 17 – 27 серпня<br><br>🏠 <strong>Апартаменти 2:</strong> 27 липня – 5 серпня, 23 вересня – 1 жовтня<br><br>📩 Додаткова інформація за запитом.',
+                    'faq-badge': '✦ Допомога',
+                    'faq-title': 'Відповіді на <span>важливі запитання</span>',
+                    'faq-sub': 'Ми зібрали найчастіші питання, щоб ви почувалися впевнено',
+                    'faq-q1': '<i class="fas fa-plane-departure"></i> Як дістатися до Мадейри?',
+                    'faq-a1': 'Ми допомагаємо з пошуком оптимальних рейсів з Варшави, Кракова або Будапешта. Надаємо інструкції та підтримуємо на всіх етапах.',
+                    'faq-q2': '<i class="fas fa-hiking"></i> Чи потрібна фізична підготовка?',
+                    'faq-a2': 'Наші маршрути розраховані на середній рівень. Ви зможете проходити до 10 км у спокійному темпі. Головне — зручне взуття та гарний настрій.',
+                    'faq-q3': '<i class="fas fa-suitcase"></i> Що брати з собою?',
+                    'faq-a3': 'Трекінгове взуття, вітрівка, фліска, купальник, сонцезахисний крем та окуляри. Ми надсилаємо повний чек-лист перед поїздкою.',
+                    'faq-q4': '<i class="fas fa-credit-card"></i> Які умови оплати?',
+                    'faq-a4': 'Передоплата 10% для бронювання. Решту — за 2 тижні до туру або готівкою на місці. Працюємо з міжнародними платіжними системами.',
+                    'faq-q5': '<i class="fas fa-passport"></i> Чи потрібна віза?',
+                    'faq-a5': 'Для громадян України з біометричним паспортом — безвізовий режим на 90 днів. Обов\'язкова наявність туристичної страховки.',
+                    'faq-q6': '<i class="fas fa-shield-alt"></i> Чи безпечно?',
+                    'faq-a6': 'Так, Мадейра — один з найбезпечніших регіонів Європи. Ми завжди на зв\'язку 24/7 та маємо локальну підтримку.',
+                    'cta-title': 'Мадейра <span>чекає на вас</span>',
+                    'cta-text': 'Напишіть нам у Telegram, WhatsApp або в Instagram — ми відповімо на всі запитання за 5 хвилин',
+                    'cta-telegram': '<i class="fab fa-telegram-plane"></i> Telegram',
+                    'cta-whatsapp': '<i class="fab fa-whatsapp"></i> WhatsApp',
+                    'cta-instagram': '<i class="fab fa-instagram"></i> Instagram',
+                    'cta-facebook': '<i class="fab fa-facebook"></i> Відгуки тут 🍀',
+                    'footer-text': '— авторські тури на Мадейру.',
+                    'footer-break': '<br>',
+                    'footer-sub': 'Зроблено з душею для ваших подорожей.'
+                },
+                sk: {
+                    'nav-tours': 'Zájazdy',
+                    'nav-about': 'O nás',
+                    'nav-apartments': 'Apartmány',
+                    'nav-faq': 'FAQ',
+                    'hero-badge': '✦ Autorské zájazdy 2026',
+                    'hero-title': 'Madeira, ktorú <i>ste ešte nevideli</i>',
+                    'hero-text': 'Úchvatné trasy, komfortné apartmány a ukrajinskí sprievodcovia — všetko pre váš ideálny oddych na ostrove večnej jari.',
+                    'hero-btn': 'Vybrať zájazd <i class="fas fa-arrow-right"></i>',
+                    'hero-stat1': '<i class="fas fa-users"></i> do 6 osôb',
+                    'hero-stat2': '<i class="fas fa-flag"></i> Ukrajinskí sprievodcovia',
+                    'hero-stat3': '<i class="fas fa-home"></i> Komfortné apartmány + transfer',
+                    'about-badge': '✦ O De\'Lana Tour',
+                    'about-title': 'Nevytvárame len zájazdy,<br><span>ale spomienky na celý život</span>',
+                    'about-text1': 'Madeira je ostrov večnej jari, kde sa stretáva oceán a hory. Vyberáme najlepšie lokality: mystický les Fanal, majestát Pico do Arieiro, malebné levady a útulné rybárske dedinky.',
+                    'about-text2': 'Naším cieľom je ukázať vám skutočnú Madeiru, ktorú nenájdete v štandardných sprievodcoch. Každý zájazd je vytvorený s láskou k detailom.',
+                    'about-feat1': '<i class="fas fa-user-friends"></i> Skupiny do 6 hostí',
+                    'about-feat2': '<i class="fas fa-comments"></i> Ukrajinskí sprievodcovia',
+                    'about-feat3': '<i class="fas fa-car"></i> Transfer po ostrove',
+                    'about-feat4': '<i class="fas fa-globe"></i> Jazyky zájazdu: ukrajinčina, angličtina, slovenčina',
+                    'tours-badge': '✦ Vyberte zájazd',
+                    'tours-title': 'Váš ideálny týždeň <span>na Madeire</span>',
+                    'tours-sub': 'Autorský program, kde každý deň je nový zážitok!',
+                    'tours-card-title': '🌿 Sedem dní harmónie',
+                    'tours-card-text': 'Ubytovanie v komfortných apartmánoch po jednom v izbe za 790 eur na osobu, alebo 490 eur pri ubytovaní po dvoch v izbe;<br>5 výletov;<br>sprievod a podpora 24/7;<br>poistenie na trasách pozemných výletov;<br>Je tiež možné samostatne si objednať individuálne výlety a apartmány bez zájazdu.',
+                    'tours-price': '/ osoba',
+                    'tour-date1': '📅 27. júla – 5. augusta',
+                    'tour-date2': '📅 23. septembra – 1. októbra',
+                    'tour-date3': '📅 15. októbra – 22. októbra',
+                    'tour-date4': '📅 11. decembra – 18. decembra',
+                    'spots-total': '6 miest',
+                    'spots-available-3': '3 voľné',
+                    'spots-available-6': '6 voľných',
+                    'tours-cta-telegram': '<i class="fab fa-telegram-plane"></i> Rezervovať v Telegrame',
+                    'tours-cta-whatsapp': '<i class="fab fa-whatsapp"></i> Rezervovať cez WhatsApp',
+                    'tours-cta-instagram': '<i class="fab fa-instagram"></i> Rezervovať cez Instagram',
+                    'tours-cta-details': '<i class="fas fa-info-circle"></i> Podrobnosti',
+                    'modal-title': '🌿 Podrobnosti zájazdu <span>“Sedem dní harmónie”</span>',
+                    'day1-number': 'Deň 1',
+                    'day1-title': 'Prvé stretnutie s Madeirou na okraji Atlantiku',
+                    'day1-stop1': '<i class="fas fa-plane"></i> <strong>Aeroporto Internacional da Madeira - Cristiano Ronaldo</strong> — Teplé privítanie s vedúcim vašej skupiny a transfer do apartmánov.',
+                    'day2-number': 'Deň 2',
+                    'day2-title': 'Mágia západnej Madeiry · 09:00–17:00',
+                    'day2-stop1': '<i class="fas fa-clock"></i> <strong>09:00 — Funchal</strong> — Odchod z hotela smerom k divokej severozápadnej časti Madeiry.',
+                    'day2-stop2': '<i class="fas fa-tree"></i> <strong>10:00 — Vavrínový les Fanal</strong> — hmla, staroveké stromy a prechádzka ako v rozprávke. V závislosti od počasia môže byť táto lokalita presunutá na záver trasy.',
+                    'day2-stop3': '<i class="fas fa-mountain"></i> <strong>11:30 — skaly Ilhéus da Ribeira da Janela</strong> — hovorí sa, že práve tu je prítomná zvláštna sila, ktorá lieči a inšpiruje.',
+                    'day2-stop4': '<i class="fas fa-water"></i> <strong>12:30 — Véu da Noiva</strong> — jeden z tých vodopádov, ktorý očaruje svojou krásou.',
+                    'day2-stop5': '<i class="fas fa-swimmer"></i> <strong>13:00 — Porto Moniz</strong> — práve tu sa nachádzajú prírodné lávové bazény, vytvorené sopečnými horninami. Oceánska voda prirodzene napĺňa bazény a vytvára jedinečné miesto na kúpanie. Možnosť kúpania závisí od poveternostných podmienok.',
+                    'day2-stop6': '<i class="fas fa-utensils"></i> <strong>14:30 — Obed</strong> — jedlá reštaurácie zoznamujú s miestnymi kulinárskymi tradíciami a prinášajú nezabudnuteľné zážitky.',
+                    'day2-stop7': '<i class="fas fa-sun"></i> <strong>16:00 — Ponta do Sol</strong> — Ak to čas dovolí, navštívime jedno z najslnečnejších a najmalebnejších mestečiek Madeiry. Farebné domy, promenáda, starobylá architektúra a večerné svetlo vytvárajú krásnu atmosféru na zakončenie dňa.',
+                    'day2-stop8': '<i class="fas fa-car"></i> <strong>17:00 — Návrat do Funchalu</strong>',
+                    'day3-number': 'Deň 3',
+                    'day3-title': 'Tradície a výhľady východnej Madeiry · 09:00–17:00',
+                    'day3-desc': '<i class="fas fa-info-circle" style="color: var(--accent);"></i> Tento deň je venovaný východnej časti ostrova. Spoznáme tradičnú architektúru Madeiry, uvidíme skalnaté severné pobrežie, navštívime liehovar, zažijeme atmosféru surfiarskeho mestečka a vydáme sa k slávnemu „dračiemu chvostu“.',
+                    'day3-stop1': '<i class="fas fa-clock"></i> <strong>10:00 — Santana a Quinta do Furão</strong> — Prvou zastávkou bude Santana — autentické mestečko, známe tradičnými trojuholníkovými domčekmi so slamenými strechami. Navštívime aj malebnú lokalitu pri Quinta do Furão, odkiaľ sa otvárajú nádherné výhľady na severné pobrežie.',
+                    'day3-stop2': '<i class="fas fa-eye"></i> <strong>11:30 — Miradouro do Guindaste</strong> — Sklenená plošina na okraji skaly ponúka panoramatický výhľad na oceán, zelené svahy, vodopády a dramatické severné pobrežie ostrova.',
+                    'day3-stop3': '<i class="fas fa-wine-bottle"></i> <strong>12:00 — Porto da Cruz</strong> — atmosférické prímorské mestečko, známe svojimi vlnami, čiernymi skalami, surfiarskymi plážami a tradičnou výrobou rumu. Navštívime jeden z najstarších liehovarov na Madeire.',
+                    'day3-stop4': '<i class="fas fa-utensils"></i> <strong>13:30 — Obed</strong> — naplánovaný je obed v jednej z najlepších reštaurácií severovýchodnej časti ostrova.',
+                    'day3-stop5': '<i class="fas fa-umbrella-beach"></i> <strong>15:00 — Pláž Prainha do Caniçal</strong> — Ak to čas a počasie dovolia, zastavíme sa na jednej z najromantickejších pláží východnej Madeiry. Prainha do Caniçal je malá pláž s tmavým sopečným pieskom, teplými odtieňmi skál a útulnou atmosférou.',
+                    'day3-stop6': '<i class="fas fa-dragon"></i> <strong>16:00 — Ponta de São Lourenço</strong> — slávny „dračí chvost“ Madeiry. Práve túto časť Madeiry je často vidieť z lietadla pri pristávaní na ostrovnom letisku. Oblasť je tiež známa svojou kinematografickosťou. Natáčali sa tu scény z filmu «Moby Dick» z roku 1956, ako aj niektoré scény veľkého filmového projektu v roku 2023.',
+                    'day3-stop7': '<i class="fas fa-car"></i> <strong>17:00 — Návrat do Funchalu</strong>',
+                    'day4-number': 'Deň 4',
+                    'day4-title': 'Panorámy, pobrežie a Pico do Arieiro',
+                    'day4-desc': '<i class="fas fa-info-circle" style="color: var(--accent);"></i> Tento deň uvidíme horské srdce ostrova, jeden z najvyšších útesov Európy, majestátnu sochu Krista a ukončíme cestu na vrchole Pico do Arieiro.',
+                    'day4-stop1': '<i class="fas fa-clock"></i> <strong>13:00 — Eira do Serrado</strong> — odtiaľto sa otvára úchvatný výhľad na dolinu a dedinu Curral das Freiras, obklopenú vysokými horskými štítmi a legendami.',
+                    'day4-stop2': '<i class="fas fa-mountain"></i> <strong>14:30 — Cabo Girão</strong> — jedno z najpôsobivejších vyhliadkových miest Madeiry, nachádzajúce sa vo výške približne 589 metrov nad Atlantickým oceánom.',
+                    'day4-stop3': '<i class="fas fa-cross"></i> <strong>15:30 — Cristo Rei</strong> — majestátna socha Krista, ktorá žehná dobrodružstvám a cestovaniu.',
+                    'day4-stop4': '<i class="fas fa-fire"></i> <strong>16:30 — Večera v kolibe</strong> — kde cítiť skutočnú atmosféru hôr Madeiry a vône, pri ktorých aj sýty dostane hlad!',
+                    'day4-stop5': '<i class="fas fa-cloud-sun"></i> <strong>18:00 — Pico do Arieiro</strong> — Finálna lokalita dňa, jeden z najvyšších vrcholov Madeiry, nachádzajúci sa vo výške 1818 metrov. Toto je miesto, kde sa mraky môžu ocitnúť priamo pod nohami a okolité horské štíty sa zdajú nekonečné.',
+                    'day4-stop6': '<i class="fas fa-car"></i> <strong>19:00 — Návrat do hotela</strong>',
+                    'day5-number': 'Deň 5',
+                    'day5-title': 'Funchal, degustácie a palác Monte',
+                    'day5-stop1': '<i class="fas fa-clock"></i> <strong>09:00–12:00 — Funchal</strong> — v prvej polovici dňa spoznáme historické centrum hlavného mesta Madeiry, jeho architektúru, záhrady, trhy a atmosférické ulice. Práve čas na nákup suvenírov a darčekov!',
+                    'day5-stop2': '<i class="fas fa-palace"></i> <strong>12:00–15:00 — Palác Monte</strong> — botanická záhrada, ktorá nikoho nenechá ľahostajným a história ohromuje a fascinuje! Na želanie je možné uskutočniť zjazd na slávnych pletených saniach-toboganoch.',
+                    'day5-stop3': '<i class="fas fa-car"></i> <strong>17:00 — Návrat do hotela</strong>',
+                    'day6-number': 'Deň 6',
+                    'day6-title': 'Program «Prekvapenie» alebo voľný deň :)',
+                    'day6-stop1': '<i class="fas fa-gift"></i> <strong>Dôverujte nám</strong> — nebudete ľutovať!',
+                    'day7-number': 'Deň 7',
+                    'day7-title': 'Ukončenie cesty',
+                    'day7-stop1': '<i class="fas fa-clock"></i> <strong>Voľný čas</strong> — príprava na transfer na letisko.',
+                    'steps-badge': '✦ Plán činnosti',
+                    'steps-title': 'Ako začať <span>vašu cestu?</span>',
+                    'steps-sub': 'Štyri jednoduché kroky — a ste na Madeire',
+                    'step1-title': 'Žiadosť',
+                    'step1-text': 'Vyberte termíny a zanechajte žiadosť na stránke alebo nám napíšte do Telegramu na plánovanie individuálneho zájazdu v termínoch, ktoré vám vyhovujú.',
+                    'step2-title': 'Dohoda',
+                    'step2-text': 'Zavoláme vám, prediskutujeme podrobnosti a ponúkneme najlepšie podmienky spolupráce pre váš oddych.',
+                    'step3-title': 'Rezervácia',
+                    'step3-text': 'Podpíšeme zmluvu, zaplatíte zálohu 10% — miesto je rezervované a už sa pripravujete na cestu.',
+                    'step4-title': 'Madeira čaká',
+                    'step4-text': 'Dostanete kompletný sprievodca, podporu našich zamestnancov a sprievod počas celej cesty.',
+                    'testimonials-badge': '✦ Recenzie',
+                    'testimonials-title': 'Emócie, ktoré <span>s vami zostávajú</span>',
+                    'testimonials-sub': 'Skutočné príbehy našich cestovateľov',
+                    'testimonial1-text': '“Les Fanal je niečo neuveriteľné. Stáli sme a mlčali, počúvajúc ticho. Ďakujeme De\'Lana Tour za túto mágiu.”',
+                    'testimonial1-author': '— Olena a Serhij, Kyjev',
+                    'testimonial2-text': '“Všetko bolo na najvyššej úrovni: apartmány, trasy, sprievodca. Už plánujeme ďalší zájazd s vami!”',
+                    'testimonial2-author': '— Andrij, Ľvov',
+                    'testimonial3-text': '“Najlepší oddych za posledné roky. Videli sme Madeiru očami miestnych — to je neoceniteľné.”',
+                    'testimonial3-author': '— Kateryna, Odesa',
+                    'testimonials-facebook': '<i class="fab fa-facebook"></i> Pozrieť všetky recenzie na Facebooku (100+)',
+                    'apartments-badge': '✦ Vaše apartmány',
+                    'apartments-title': 'Prebuďte sa <span>s výhľadom na oceán</span>',
+                    'apartments-text1': 'Vyberieme najlepší domov pre váš oddych na Madeire!<br>Vyberieme podľa požiadavky ubytovanie v apartmánoch, na vile alebo v hoteli!',
+                    'apartments-btn': 'Rezervovať apartmány',
+                    'apartments-availability': '<strong>🏡 Taktiež je možné rezervovať apartmány bez zájazdu.</strong><br><br>📅 <strong>Dostupné termíny:</strong><br><br>🏠 <strong>Apartmán 1:</strong> 1. – 7. augusta, 17. – 27. augusta<br><br>🏠 <strong>Apartmán 2:</strong> 27. júla – 5. augusta, 23. septembra – 1. októbra<br><br>📩 Ďalšie informácie na vyžiadanie.',
+                    'faq-badge': '✦ Pomoc',
+                    'faq-title': 'Odpovede na <span>dôležité otázky</span>',
+                    'faq-sub': 'Zhromaždili sme najčastejšie otázky, aby ste sa cítili istí',
+                    'faq-q1': '<i class="fas fa-plane-departure"></i> Ako sa dostať na Madeiru?',
+                    'faq-a1': 'Pomáhame s vyhľadávaním optimálnych letov z Varšavy, Krakova alebo Budapešti. Poskytujeme pokyny a podporu na všetkých etapách.',
+                    'faq-q2': '<i class="fas fa-hiking"></i> Je potrebná fyzická príprava?',
+                    'faq-a2': 'Naše trasy sú navrhnuté na strednú úroveň. Zvládnete prejsť až 10 km v pokojnom tempe. Hlavné je pohodlná obuv a dobrá nálada.',
+                    'faq-q3': '<i class="fas fa-suitcase"></i> Čo si vziať so sebou?',
+                    'faq-a3': 'Trekingovú obuv, vetrovku, fleece, plavky, opaľovací krém a okuliare. Pred cestou vám pošleme kompletný kontrolný zoznam.',
+                    'faq-q4': '<i class="fas fa-credit-card"></i> Aké sú platobné podmienky?',
+                    'faq-a4': 'Záloha 10% na rezerváciu. Zvyšok — 2 týždne pred zájazdom alebo v hotovosti na mieste. Spolupracujeme s medzinárodnými platobnými systémami.',
+                    'faq-q5': '<i class="fas fa-passport"></i> Je potrebné vízum?',
+                    'faq-a5': 'Pre občanov Ukrajiny s biometrickým pasom — bezvízový režim na 90 dní. Povinné cestovné poistenie.',
+                    'faq-q6': '<i class="fas fa-shield-alt"></i> Je to bezpečné?',
+                    'faq-a6': 'Áno, Madeira je jedným z najbezpečnejších regiónov Európy. Sme v kontakte 24/7 a máme miestnu podporu.',
+                    'cta-title': 'Madeira <span>na vás čaká</span>',
+                    'cta-text': 'Napíšte nám do Telegramu, WhatsAppu alebo Instagramu — odpovieme na všetky otázky do 5 minút',
+                    'cta-telegram': '<i class="fab fa-telegram-plane"></i> Telegram',
+                    'cta-whatsapp': '<i class="fab fa-whatsapp"></i> WhatsApp',
+                    'cta-instagram': '<i class="fab fa-instagram"></i> Instagram',
+                    'cta-facebook': '<i class="fab fa-facebook"></i> Recenzie tu 🍀',
+                    'footer-text': '— autorské zájazdy na Madeiru.',
+                    'footer-break': '<br>',
+                    'footer-sub': 'Vyrobené s dušou pre vaše cesty.'
+                },
+                en: {
+                    'nav-tours': 'Tours',
+                    'nav-about': 'About Us',
+                    'nav-apartments': 'Apartments',
+                    'nav-faq': 'FAQ',
+                    'hero-badge': '✦ Author\'s tours 2026',
+                    'hero-title': 'Madeira <i>you\'ve never seen</i>',
+                    'hero-text': 'Impressive routes, comfortable apartments and Ukrainian-speaking guides — everything for your perfect vacation on the island of eternal spring.',
+                    'hero-btn': 'Choose tour <i class="fas fa-arrow-right"></i>',
+                    'hero-stat1': '<i class="fas fa-users"></i> up to 6 persons',
+                    'hero-stat2': '<i class="fas fa-flag"></i> Ukrainian guides',
+                    'hero-stat3': '<i class="fas fa-home"></i> Comfortable apartments + transfer',
+                    'about-badge': '✦ About De\'Lana Tour',
+                    'about-title': 'We don\'t just create tours,<br><span>we create memories for life</span>',
+                    'about-text1': 'Madeira is the island of eternal spring, where the ocean meets the mountains. We choose the best locations: the mystical Fanal forest, the grandeur of Pico do Arieiro, picturesque levadas and cozy fishing villages.',
+                    'about-text2': 'Our goal is to show you the real Madeira that you won\'t find in standard guidebooks. Every tour is created with love for detail.',
+                    'about-feat1': '<i class="fas fa-user-friends"></i> Groups up to 6 guests',
+                    'about-feat2': '<i class="fas fa-comments"></i> Ukrainian-speaking guides',
+                    'about-feat3': '<i class="fas fa-car"></i> Island transfer',
+                    'about-feat4': '<i class="fas fa-globe"></i> Tour languages: Ukrainian, English, Slovak',
+                    'tours-badge': '✦ Choose a tour',
+                    'tours-title': 'Your perfect week <span>on Madeira</span>',
+                    'tours-sub': 'An author\'s program where every day is a new emotion!',
+                    'tours-card-title': '🌿 Seven days of harmony',
+                    'tours-card-text': 'Accommodation in comfortable apartments one per room at 790 euros per person, or 490 euros when sharing a room;<br>5 excursions;<br>guide support and 24/7 assistance;<br>insurance on land excursion routes;<br>It is also possible to separately order individual excursions and apartments without a tour.',
+                    'tours-price': '/ person',
+                    'tour-date1': '📅 July 27 – August 5',
+                    'tour-date2': '📅 September 23 – October 1',
+                    'tour-date3': '📅 October 15 – October 22',
+                    'tour-date4': '📅 December 11 – December 18',
+                    'spots-total': '6 spots',
+                    'spots-available-3': '3 available',
+                    'spots-available-6': '6 available',
+                    'tours-cta-telegram': '<i class="fab fa-telegram-plane"></i> Book via Telegram',
+                    'tours-cta-whatsapp': '<i class="fab fa-whatsapp"></i> Book via WhatsApp',
+                    'tours-cta-instagram': '<i class="fab fa-instagram"></i> Book via Instagram',
+                    'tours-cta-details': '<i class="fas fa-info-circle"></i> Learn more',
+                    'modal-title': '🌿 Tour details <span>“Seven days of harmony”</span>',
+                    'day1-number': 'Day 1',
+                    'day1-title': 'First meeting with Madeira on the edge of the Atlantic',
+                    'day1-stop1': '<i class="fas fa-plane"></i> <strong>Aeroporto Internacional da Madeira - Cristiano Ronaldo</strong> — Warm welcome with your group leader and transfer to the apartments.',
+                    'day2-number': 'Day 2',
+                    'day2-title': 'Magic of Western Madeira · 09:00–17:00',
+                    'day2-stop1': '<i class="fas fa-clock"></i> <strong>09:00 — Funchal</strong> — Departure from the hotel towards the wild northwestern part of Madeira.',
+                    'day2-stop2': '<i class="fas fa-tree"></i> <strong>10:00 — Laurel Forest Fanal</strong> — fog, ancient trees and a walk like in a fairy tale. Depending on weather conditions, this location may be moved to the end of the route.',
+                    'day2-stop3': '<i class="fas fa-mountain"></i> <strong>11:30 — Ilhéus da Ribeira da Janela cliffs</strong> — they say this is where a special healing and inspiring power resides.',
+                    'day2-stop4': '<i class="fas fa-water"></i> <strong>12:30 — Véu da Noiva</strong> — one of those waterfalls that captivates with its beauty.',
+                    'day2-stop5': '<i class="fas fa-swimmer"></i> <strong>13:00 — Porto Moniz</strong> — this is where the natural lava pools, formed by volcanic rocks, are located. Ocean water naturally fills the pools, creating a unique swimming spot. Swimming depends on weather conditions.',
+                    'day2-stop6': '<i class="fas fa-utensils"></i> <strong>14:30 — Lunch</strong> — restaurant dishes introduce local culinary traditions and provide unforgettable impressions.',
+                    'day2-stop7': '<i class="fas fa-sun"></i> <strong>16:00 — Ponta do Sol</strong> — If time permits, we will visit one of the sunniest and most picturesque towns of Madeira. Colorful houses, promenade, ancient architecture and evening light create a beautiful atmosphere to end the day.',
+                    'day2-stop8': '<i class="fas fa-car"></i> <strong>17:00 — Return to Funchal</strong>',
+                    'day3-number': 'Day 3',
+                    'day3-title': 'Traditions and views of Eastern Madeira · 09:00–17:00',
+                    'day3-desc': '<i class="fas fa-info-circle" style="color: var(--accent);"></i> This day is dedicated to the eastern part of the island. We will get acquainted with the traditional architecture of Madeira, see the rocky northern coast, visit a rum factory, experience the atmosphere of a surfing town and head to the famous "Dragon\'s Tail".',
+                    'day3-stop1': '<i class="fas fa-clock"></i> <strong>10:00 — Santana and Quinta do Furão</strong> — The first stop will be Santana — an authentic town, known for its traditional triangular houses with thatched roofs. We will also visit a picturesque location near Quinta do Furão, which offers beautiful views of the northern coast.',
+                    'day3-stop2': '<i class="fas fa-eye"></i> <strong>11:30 — Miradouro do Guindaste</strong> — A glass platform on the edge of a cliff offers a panoramic view of the ocean, green slopes, waterfalls and the dramatic northern coast of the island.',
+                    'day3-stop3': '<i class="fas fa-wine-bottle"></i> <strong>12:00 — Porto da Cruz</strong> — an atmospheric seaside town, known for its waves, black cliffs, surfing beaches and traditional rum production. We will visit one of the oldest rum factories on Madeira.',
+                    'day3-stop4': '<i class="fas fa-utensils"></i> <strong>13:30 — Lunch</strong> — lunch is planned at one of the best restaurants in the northeastern part of the island.',
+                    'day3-stop5': '<i class="fas fa-umbrella-beach"></i> <strong>15:00 — Prainha do Caniçal Beach</strong> — If time and weather permit, we will stop at one of the most romantic beaches of eastern Madeira. Prainha do Caniçal is a small beach with dark volcanic sand, warm rock tones and a cozy atmosphere.',
+                    'day3-stop6': '<i class="fas fa-dragon"></i> <strong>16:00 — Ponta de São Lourenço</strong> — the famous "Dragon\'s Tail" of Madeira. This part of Madeira is often visible from an airplane during landing at the island\'s airport. The area is also known for its cinematic quality. Filming for "Moby Dick" (1956) and scenes from a major film project in 2023 took place here.',
+                    'day3-stop7': '<i class="fas fa-car"></i> <strong>17:00 — Return to Funchal</strong>',
+                    'day4-number': 'Day 4',
+                    'day4-title': 'Panoramas, coast and Pico do Arieiro',
+                    'day4-desc': '<i class="fas fa-info-circle" style="color: var(--accent);"></i> This day we will see the mountain heart of the island, one of the highest cliffs in Europe, the majestic statue of Christ and finish the journey at the top of Pico do Arieiro.',
+                    'day4-stop1': '<i class="fas fa-clock"></i> <strong>13:00 — Eira do Serrado</strong> — from here a breathtaking view of the valley and the village of Curral das Freiras opens up, surrounded by high mountain peaks and legends.',
+                    'day4-stop2': '<i class="fas fa-mountain"></i> <strong>14:30 — Cabo Girão</strong> — one of the most impressive viewpoints of Madeira, located at an altitude of about 589 meters above the Atlantic Ocean.',
+                    'day4-stop3': '<i class="fas fa-cross"></i> <strong>15:30 — Cristo Rei</strong> — the majestic statue of Christ, which blesses adventures and travels.',
+                    'day4-stop4': '<i class="fas fa-fire"></i> <strong>16:30 — Dinner in a hut</strong> — where you can feel the real vibe of the Madeira mountains, and the aromas make even a full person hungry!',
+                    'day4-stop5': '<i class="fas fa-cloud-sun"></i> <strong>18:00 — Pico do Arieiro</strong> — The final location of the day, one of the highest peaks of Madeira, located at an altitude of 1818 meters. This is a place where clouds can be right under your feet, and the surrounding mountain peaks seem endless.',
+                    'day4-stop6': '<i class="fas fa-car"></i> <strong>19:00 — Return to hotel</strong>',
+                    'day5-number': 'Day 5',
+                    'day5-title': 'Funchal, tastings and Monte Palace',
+                    'day5-stop1': '<i class="fas fa-clock"></i> <strong>09:00–12:00 — Funchal</strong> — in the first half of the day we will get acquainted with the historical center of the capital of Madeira, its architecture, gardens, markets and atmospheric streets. It\'s time to buy souvenirs and gifts!',
+                    'day5-stop2': '<i class="fas fa-palace"></i> <strong>12:00–15:00 — Monte Palace</strong> — a botanical garden that leaves no one indifferent, and its history is impressive and fascinating! On request, you can descend on the famous wicker toboggan sleds.',
+                    'day5-stop3': '<i class="fas fa-car"></i> <strong>17:00 — Return to hotel</strong>',
+                    'day6-number': 'Day 6',
+                    'day6-title': '«Surprise» program or free day :)',
+                    'day6-stop1': '<i class="fas fa-gift"></i> <strong>Trust us</strong> — you won\'t regret it!',
+                    'day7-number': 'Day 7',
+                    'day7-title': 'End of journey',
+                    'day7-stop1': '<i class="fas fa-clock"></i> <strong>Free time</strong> — preparation for transfer to the airport.',
+                    'steps-badge': '✦ Action plan',
+                    'steps-title': 'How to start <span>your journey?</span>',
+                    'steps-sub': 'Four simple steps — and you\'re on Madeira',
+                    'step1-title': 'Application',
+                    'step1-text': 'Choose dates and leave an application on the website or write to us on Telegram to plan an individual tour at a convenient date for you.',
+                    'step2-title': 'Agreement',
+                    'step2-text': 'We will call you, discuss the details and offer the best terms of cooperation for your vacation.',
+                    'step3-title': 'Booking',
+                    'step3-text': 'We sign the contract, you make a 10% prepayment — the spot is secured and you are already preparing for the trip.',
+                    'step4-title': 'Madeira is waiting',
+                    'step4-text': 'You receive a complete guide, support from our staff and assistance throughout the entire journey.',
+                    'testimonials-badge': '✦ Reviews',
+                    'testimonials-title': 'Emotions that <span>stay with you</span>',
+                    'testimonials-sub': 'Real stories of our travelers',
+                    'testimonial1-text': '“The Fanal forest is something incredible. We stood and were silent, listening to the silence. Thank you De\'Lana Tour for this magic.”',
+                    'testimonial1-author': '— Olena and Serhii, Kyiv',
+                    'testimonial2-text': '“Everything was top-notch: apartments, routes, guide. We are already planning the next tour with you!”',
+                    'testimonial2-author': '— Andriy, Lviv',
+                    'testimonial3-text': '“The best vacation in years. We saw Madeira through the eyes of locals — it\'s priceless.”',
+                    'testimonial3-author': '— Kateryna, Odesa',
+                    'testimonials-facebook': '<i class="fab fa-facebook"></i> View all reviews on Facebook (100+)',
+                    'apartments-badge': '✦ Your apartments',
+                    'apartments-title': 'Wake up <span>with an ocean view</span>',
+                    'apartments-text1': 'We will find the best home for your vacation on Madeira!<br>We will select accommodation in apartments, villas or hotels upon request!',
+                    'apartments-btn': 'Book apartments',
+                    'apartments-availability': '<strong>🏡 Apartments can also be booked without a tour.</strong><br><br>📅 <strong>Available dates:</strong><br><br>🏠 <strong>Apartment 1:</strong> August 1–7, August 17–27<br><br>🏠 <strong>Apartment 2:</strong> July 27–August 5, September 23–October 1<br><br>📩 Additional information on request.',
+                    'faq-badge': '✦ Help',
+                    'faq-title': 'Answers to <span>important questions</span>',
+                    'faq-sub': 'We have collected the most frequent questions so you feel confident',
+                    'faq-q1': '<i class="fas fa-plane-departure"></i> How to get to Madeira?',
+                    'faq-a1': 'We help find the best flights from Warsaw, Krakow or Budapest. We provide instructions and support at all stages.',
+                    'faq-q2': '<i class="fas fa-hiking"></i> Is physical fitness required?',
+                    'faq-a2': 'Our routes are designed for an average level. You can walk up to 10 km at a leisurely pace. The main thing is comfortable shoes and a good mood.',
+                    'faq-q3': '<i class="fas fa-suitcase"></i> What to take with you?',
+                    'faq-a3': 'Trekking shoes, windbreaker, fleece, swimsuit, sunscreen and sunglasses. We send a complete checklist before the trip.',
+                    'faq-q4': '<i class="fas fa-credit-card"></i> What are the payment terms?',
+                    'faq-a4': '10% prepayment for booking. The rest — 2 weeks before the tour or in cash on site. We work with international payment systems.',
+                    'faq-q5': '<i class="fas fa-passport"></i> Is a visa required?',
+                    'faq-a5': 'For Ukrainian citizens with a biometric passport — visa-free regime for 90 days. Travel insurance is mandatory.',
+                    'faq-q6': '<i class="fas fa-shield-alt"></i> Is it safe?',
+                    'faq-a6': 'Yes, Madeira is one of the safest regions in Europe. We are available 24/7 and have local support.',
+                    'cta-title': 'Madeira <span>is waiting for you</span>',
+                    'cta-text': 'Write to us on Telegram, WhatsApp or Instagram — we will answer all questions within 5 minutes',
+                    'cta-telegram': '<i class="fab fa-telegram-plane"></i> Telegram',
+                    'cta-whatsapp': '<i class="fab fa-whatsapp"></i> WhatsApp',
+                    'cta-instagram': '<i class="fab fa-instagram"></i> Instagram',
+                    'cta-facebook': '<i class="fab fa-facebook"></i> Reviews here 🍀',
+                    'footer-text': '— author\'s tours to Madeira.',
+                    'footer-break': '<br>',
+                    'footer-sub': 'Made with soul for your travels.'
+                }
+            };
+
+            function applyLanguage(lang) {
+                const t = translations[lang] || translations.uk;
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    if (t[key] !== undefined) {
+                        el.innerHTML = t[key];
+                    }
+                });
+                document.querySelectorAll('.language-switcher a').forEach(link => {
+                    link.classList.toggle('active', link.dataset.lang === lang);
+                });
+                document.documentElement.lang = lang === 'uk' ? 'uk' : lang;
+                localStorage.setItem('preferred-language', lang);
+            }
+
+            document.querySelectorAll('.language-switcher a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const lang = this.dataset.lang;
+                    if (lang) {
+                        applyLanguage(lang);
+                    }
+                });
+            });
+
+            const savedLang = localStorage.getItem('preferred-language') || 'uk';
+            applyLanguage(savedLang);
+
+        })();
+    </script>
+</body>
+</html>
