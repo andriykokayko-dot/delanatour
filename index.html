@@ -88,8 +88,13 @@
             font-weight: 300;
         }
 
-        .text-center { text-align: center; }
-        .mx-auto { margin-left: auto; margin-right: auto; }
+        .text-center {
+            text-align: center;
+        }
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
 
         .btn-primary {
             display: inline-flex;
@@ -392,7 +397,7 @@
             font-weight: 500;
             letter-spacing: 0.04em;
             font-family: var(--font-sans);
-            border: 1px solid rgba(255,255,255,0.15);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             pointer-events: none;
         }
 
@@ -415,17 +420,21 @@
             cursor: pointer;
             transition: var(--transition);
             z-index: 10;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
         }
 
         .carousel-btn:hover {
             background: var(--white);
             transform: translateY(-50%) scale(1.05);
-            box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
         }
 
-        .carousel-btn.prev { left: 14px; }
-        .carousel-btn.next { right: 14px; }
+        .carousel-btn.prev {
+            left: 14px;
+        }
+        .carousel-btn.next {
+            right: 14px;
+        }
 
         .carousel-dots {
             position: absolute;
@@ -435,12 +444,12 @@
             display: flex;
             gap: 8px;
             z-index: 10;
-            background: rgba(255,255,255,0.2);
+            background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(6px);
             -webkit-backdrop-filter: blur(6px);
             padding: 6px 14px;
             border-radius: 60px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .carousel-dot {
@@ -1412,11 +1421,22 @@
                 grid-template-columns: 1fr;
                 gap: 50px;
             }
-            .hero-content h1 { font-size: 3.2rem; }
-            .section-title { font-size: 2.6rem; }
-            .steps-grid { grid-template-columns: 1fr 1fr; }
-            .testimonial-grid { grid-template-columns: 1fr 1fr; }
-            .faq-grid { grid-template-columns: 1fr; gap: 30px; }
+            .hero-content h1 {
+                font-size: 3.2rem;
+            }
+            .section-title {
+                font-size: 2.6rem;
+            }
+            .steps-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .testimonial-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1426,18 +1446,47 @@
                 gap: 10px;
                 padding: 10px 0;
             }
-            .navbar-right { justify-content: center; gap: 10px; }
-            .nav-links { justify-content: center; gap: 10px 14px; }
-            .social-icons a { width: 32px; height: 32px; font-size: 1rem; }
-            .hero-content h1 { font-size: 2.6rem; }
-            .hero-content p { font-size: 1rem; }
-            .hero-stats { gap: 16px; }
-            .section-title { font-size: 2.2rem; }
-            .section-sub { font-size: 1rem; margin-bottom: 32px; }
-            .steps-grid { grid-template-columns: 1fr; }
-            .testimonial-grid { grid-template-columns: 1fr; }
-            .tour-card { padding: 28px; }
-            .tour-card .price { font-size: 2.6rem; }
+            .navbar-right {
+                justify-content: center;
+                gap: 10px;
+            }
+            .nav-links {
+                justify-content: center;
+                gap: 10px 14px;
+            }
+            .social-icons a {
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
+            }
+            .hero-content h1 {
+                font-size: 2.6rem;
+            }
+            .hero-content p {
+                font-size: 1rem;
+            }
+            .hero-stats {
+                gap: 16px;
+            }
+            .section-title {
+                font-size: 2.2rem;
+            }
+            .section-sub {
+                font-size: 1rem;
+                margin-bottom: 32px;
+            }
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            .tour-card {
+                padding: 28px;
+            }
+            .tour-card .price {
+                font-size: 2.6rem;
+            }
             .tour-item {
                 flex-direction: column;
                 align-items: stretch;
@@ -1449,7 +1498,9 @@
                 align-items: flex-start;
                 gap: 8px;
             }
-            .tour-item .tour-actions { justify-content: flex-start; }
+            .tour-item .tour-actions {
+                justify-content: flex-start;
+            }
             .btn-tour {
                 min-width: 160px;
                 max-width: 100%;
@@ -1457,89 +1508,399 @@
                 padding: 14px 20px;
                 font-size: 0.9rem;
             }
-            .about-content h2 { font-size: 2rem; }
-            .apartments-content h2 { font-size: 2rem; }
-            .cta h2 { font-size: 2.2rem; }
-            .cta p { font-size: 1rem; }
-            .cta .cta-buttons { flex-direction: column; align-items: center; }
-            .cta .cta-btn { width: 100%; max-width: 320px; }
-            .cta .cta-facebook { max-width: 320px; }
-            .faq-item p { padding-left: 0; }
-            .btn-primary { padding: 14px 28px; font-size: 0.95rem; }
-            .logo { font-size: 1.5rem; text-align: center; }
-            .section-badge { font-size: 0.7rem; padding: 4px 16px; }
-            .carousel-btn { width: 36px; height: 36px; font-size: 1rem; }
-            .carousel-btn.prev { left: 10px; }
-            .carousel-btn.next { right: 10px; }
-            .carousel-dots { gap: 6px; padding: 4px 10px; }
-            .carousel-dot { width: 8px; height: 8px; }
-            .carousel-dot.active { width: 18px; }
-            .modal { max-width: 100%; margin: 10px; max-height: 95vh; border-radius: 12px; }
-            .modal-header { padding: 14px 18px 10px; }
-            .modal-header h2 { font-size: 1.1rem; }
-            .modal-close { width: 34px; height: 34px; font-size: 1rem; }
-            .modal-body { padding: 14px 16px 20px; max-height: calc(95vh - 65px); }
-            .day-slide { padding: 14px 14px; }
-            .day-slide .day-image { height: 120px; }
-            .day-slide h3 { font-size: 1.1rem; }
-            .day-slide .day-desc { font-size: 0.88rem; }
-            .day-slide .day-list { max-height: 200px; }
-            .day-slide .day-list li { font-size: 0.82rem; padding: 5px 10px; gap: 8px; }
-            .day-slide .day-list li i { font-size: 0.75rem; width: 16px; }
-            .carousel-nav { gap: 12px; margin-top: 14px; }
-            .carousel-nav button { width: 38px; height: 38px; font-size: 1rem; }
-            .carousel-nav .day-indicator { font-size: 0.75rem; gap: 8px; }
-            .carousel-nav .day-indicator .dot { width: 6px; height: 6px; }
-            .carousel-nav .day-indicator .dot.active { width: 16px; }
+            .about-content h2 {
+                font-size: 2rem;
+            }
+            .apartments-content h2 {
+                font-size: 2rem;
+            }
+            .cta h2 {
+                font-size: 2.2rem;
+            }
+            .cta p {
+                font-size: 1rem;
+            }
+            .cta .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .cta .cta-btn {
+                width: 100%;
+                max-width: 320px;
+            }
+            .cta .cta-facebook {
+                max-width: 320px;
+            }
+            .faq-item p {
+                padding-left: 0;
+            }
+            .btn-primary {
+                padding: 14px 28px;
+                font-size: 0.95rem;
+            }
+            .logo {
+                font-size: 1.5rem;
+                text-align: center;
+            }
+            .section-badge {
+                font-size: 0.7rem;
+                padding: 4px 16px;
+            }
+            .carousel-btn {
+                width: 36px;
+                height: 36px;
+                font-size: 1rem;
+            }
+            .carousel-btn.prev {
+                left: 10px;
+            }
+            .carousel-btn.next {
+                right: 10px;
+            }
+            .carousel-dots {
+                gap: 6px;
+                padding: 4px 10px;
+            }
+            .carousel-dot {
+                width: 8px;
+                height: 8px;
+            }
+            .carousel-dot.active {
+                width: 18px;
+            }
+            .modal {
+                max-width: 100%;
+                margin: 10px;
+                max-height: 95vh;
+                border-radius: 12px;
+            }
+            .modal-header {
+                padding: 14px 18px 10px;
+            }
+            .modal-header h2 {
+                font-size: 1.1rem;
+            }
+            .modal-close {
+                width: 34px;
+                height: 34px;
+                font-size: 1rem;
+            }
+            .modal-body {
+                padding: 14px 16px 20px;
+                max-height: calc(95vh - 65px);
+            }
+            .day-slide {
+                padding: 14px 14px;
+            }
+            .day-slide .day-image {
+                height: 120px;
+            }
+            .day-slide h3 {
+                font-size: 1.1rem;
+            }
+            .day-slide .day-desc {
+                font-size: 0.88rem;
+            }
+            .day-slide .day-list {
+                max-height: 200px;
+            }
+            .day-slide .day-list li {
+                font-size: 0.82rem;
+                padding: 5px 10px;
+                gap: 8px;
+            }
+            .day-slide .day-list li i {
+                font-size: 0.75rem;
+                width: 16px;
+            }
+            .carousel-nav {
+                gap: 12px;
+                margin-top: 14px;
+            }
+            .carousel-nav button {
+                width: 38px;
+                height: 38px;
+                font-size: 1rem;
+            }
+            .carousel-nav .day-indicator {
+                font-size: 0.75rem;
+                gap: 8px;
+            }
+            .carousel-nav .day-indicator .dot {
+                width: 6px;
+                height: 6px;
+            }
+            .carousel-nav .day-indicator .dot.active {
+                width: 16px;
+            }
         }
 
         @media (max-width: 480px) {
-            .container { padding: 0 16px; }
-            .hero { padding: 30px 0 60px; }
-            .hero-content h1 { font-size: 2.2rem; }
-            .hero-stats { flex-direction: column; gap: 10px; }
-            .about-features { flex-direction: column; align-items: stretch; }
-            .about-features div { justify-content: center; }
-            .step-item { padding: 28px 16px; }
-            .testimonial-item { padding: 24px; }
-            .apartments-grid { gap: 30px; }
-            .cta h2 { font-size: 1.8rem; }
-            .footer { font-size: 0.85rem; padding: 24px 0; }
-            .carousel-btn { width: 32px; height: 32px; font-size: 0.8rem; }
-            .carousel-dots { gap: 4px; padding: 4px 8px; }
-            .carousel-dot { width: 6px; height: 6px; }
-            .carousel-dot.active { width: 14px; }
-            .social-icons a { width: 28px; height: 28px; font-size: 0.85rem; }
-            .btn-tour { padding: 12px 16px; font-size: 0.85rem; min-width: 140px; }
-            .btn-tour i { font-size: 1rem; }
-            .modal-header h2 { font-size: 0.95rem; }
-            .modal-close { width: 30px; height: 30px; font-size: 0.85rem; }
-            .modal-body { padding: 10px 12px 16px; }
-            .day-slide { padding: 10px 10px; }
-            .day-slide .day-image { height: 100px; }
-            .day-slide h3 { font-size: 0.95rem; }
-            .day-slide .day-desc { font-size: 0.8rem; }
-            .day-slide .day-list { max-height: 160px; gap: 4px; }
-            .day-slide .day-list li { font-size: 0.75rem; padding: 4px 8px; gap: 6px; border-radius: 8px; }
-            .day-slide .day-list li i { font-size: 0.7rem; width: 14px; }
-            .carousel-nav { gap: 8px; margin-top: 12px; }
-            .carousel-nav button { width: 32px; height: 32px; font-size: 0.8rem; }
-            .carousel-nav .day-indicator { font-size: 0.65rem; gap: 6px; }
-            .carousel-nav .day-indicator .dot { width: 5px; height: 5px; }
-            .carousel-nav .day-indicator .dot.active { width: 14px; }
+            .container {
+                padding: 0 16px;
+            }
+            .hero {
+                padding: 30px 0 60px;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .hero-stats {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .about-features {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .about-features div {
+                justify-content: center;
+            }
+            .step-item {
+                padding: 28px 16px;
+            }
+            .testimonial-item {
+                padding: 24px;
+            }
+            .apartments-grid {
+                gap: 30px;
+            }
+            .cta h2 {
+                font-size: 1.8rem;
+            }
+            .footer {
+                font-size: 0.85rem;
+                padding: 24px 0;
+            }
+            .carousel-btn {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+            .carousel-dots {
+                gap: 4px;
+                padding: 4px 8px;
+            }
+            .carousel-dot {
+                width: 6px;
+                height: 6px;
+            }
+            .carousel-dot.active {
+                width: 14px;
+            }
+            .social-icons a {
+                width: 28px;
+                height: 28px;
+                font-size: 0.85rem;
+            }
+            .btn-tour {
+                padding: 12px 16px;
+                font-size: 0.85rem;
+                min-width: 140px;
+            }
+            .btn-tour i {
+                font-size: 1rem;
+            }
+            .modal-header h2 {
+                font-size: 0.95rem;
+            }
+            .modal-close {
+                width: 30px;
+                height: 30px;
+                font-size: 0.85rem;
+            }
+            .modal-body {
+                padding: 10px 12px 16px;
+            }
+            .day-slide {
+                padding: 10px 10px;
+            }
+            .day-slide .day-image {
+                height: 100px;
+            }
+            .day-slide h3 {
+                font-size: 0.95rem;
+            }
+            .day-slide .day-desc {
+                font-size: 0.8rem;
+            }
+            .day-slide .day-list {
+                max-height: 160px;
+                gap: 4px;
+            }
+            .day-slide .day-list li {
+                font-size: 0.75rem;
+                padding: 4px 8px;
+                gap: 6px;
+                border-radius: 8px;
+            }
+            .day-slide .day-list li i {
+                font-size: 0.7rem;
+                width: 14px;
+            }
+            .carousel-nav {
+                gap: 8px;
+                margin-top: 12px;
+            }
+            .carousel-nav button {
+                width: 32px;
+                height: 32px;
+                font-size: 0.8rem;
+            }
+            .carousel-nav .day-indicator {
+                font-size: 0.65rem;
+                gap: 6px;
+            }
+            .carousel-nav .day-indicator .dot {
+                width: 5px;
+                height: 5px;
+            }
+            .carousel-nav .day-indicator .dot.active {
+                width: 14px;
+            }
         }
 
-        :root { --primary: #123b38; --primary-light: #1d5a53; --primary-dark: #0a2927; --accent: #e8784b; --accent-light: #fbe3d8; --cream: #f7f5ef; --radius: 30px; }
-        .container { max-width: 1280px; }
-        .navbar { width: min(1200px, calc(100% - 32px)); margin: 16px auto 0; padding: 12px 20px; border: 1px solid rgba(18,59,56,.08); border-radius: 22px; box-shadow: 0 10px 32px rgba(18,59,56,.06); }
-        .navbar .container { padding: 0; }.nav-links { gap: 28px; }.nav-links a { color: var(--primary); }.social-icons { display: none; }
-        .hero { padding: 38px 0 92px; background: var(--cream); }.hero-grid { display:block; position:relative; min-height:620px; overflow:hidden; border-radius:34px; background:var(--primary-dark); }.hero-content { position:absolute; z-index:3; left:clamp(28px,6vw,78px); bottom:clamp(36px,7vw,82px); max-width:700px; color:#fff; }.hero-content h1 { color:#fff; font-size:clamp(3rem,6.2vw,6.2rem); letter-spacing:-.06em; }.hero-content p { color:rgba(255,255,255,.88); max-width:620px; }.hero-content .section-badge { color:#fff; background:rgba(255,255,255,.16); border:1px solid rgba(255,255,255,.28); }.hero-content .btn-primary { background:var(--accent); }.hero-stats div { color:#fff; }.hero-grid .carousel-wrapper { position:absolute; inset:0; width:100%; height:100%; aspect-ratio:auto; border-radius:0; box-shadow:none; }.hero-grid .carousel-wrapper::after { content:''; position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(90deg,rgba(4,23,22,.78),rgba(4,23,22,.06) 78%); }.hero-grid .carousel-btn,.hero-grid .carousel-dots { z-index:4; }
-        .about,.tours { padding:110px 0; }.tour-card { max-width:920px; border-radius:30px; }.tour-item { border-radius:16px; }.btn-tour,.btn-detail { border-radius:16px; }
-        #apartmentsTrack .carousel-slide:first-child { background-image: url('https://i.postimg.cc/hvn5YT4Q/IMG-4002.jpg') !important; }
-        #apartmentsTrack .carousel-slide:not(:first-child), #apartmentsCarousel .carousel-btn, #apartmentsCarousel .carousel-dots, #apartmentsTrack .slide-number { display: none; }
-        .btn-tour-telegram { background: #229ED9; box-shadow: 0 6px 24px rgba(34, 158, 217, .32); }
-        .btn-tour-telegram:hover { background: #168ac1; }
-        @media (max-width:760px) { .nav-links{display:none}.hero-grid{min-height:640px;border-radius:24px}.hero-content{left:24px;right:24px;bottom:36px}.hero-grid .carousel-wrapper::after{background:linear-gradient(0deg,rgba(4,23,22,.88),rgba(4,23,22,.08) 78%)} }
+        :root {
+            --primary: #123b38;
+            --primary-light: #1d5a53;
+            --primary-dark: #0a2927;
+            --accent: #e8784b;
+            --accent-light: #fbe3d8;
+            --cream: #f7f5ef;
+            --radius: 30px;
+        }
+        .container {
+            max-width: 1280px;
+        }
+        .navbar {
+            width: min(1200px, calc(100% - 32px));
+            margin: 16px auto 0;
+            padding: 12px 20px;
+            border: 1px solid rgba(18, 59, 56, .08);
+            border-radius: 22px;
+            box-shadow: 0 10px 32px rgba(18, 59, 56, .06);
+        }
+        .navbar .container {
+            padding: 0;
+        }
+        .nav-links {
+            gap: 28px;
+        }
+        .nav-links a {
+            color: var(--primary);
+        }
+        .social-icons {
+            display: none;
+        }
+        .hero {
+            padding: 38px 0 92px;
+            background: var(--cream);
+        }
+        .hero-grid {
+            display: block;
+            position: relative;
+            min-height: 620px;
+            overflow: hidden;
+            border-radius: 34px;
+            background: var(--primary-dark);
+        }
+        .hero-content {
+            position: absolute;
+            z-index: 3;
+            left: clamp(28px, 6vw, 78px);
+            bottom: clamp(36px, 7vw, 82px);
+            max-width: 700px;
+            color: #fff;
+        }
+        .hero-content h1 {
+            color: #fff;
+            font-size: clamp(3rem, 6.2vw, 6.2rem);
+            letter-spacing: -.06em;
+        }
+        .hero-content p {
+            color: rgba(255, 255, 255, .88);
+            max-width: 620px;
+        }
+        .hero-content .section-badge {
+            color: #fff;
+            background: rgba(255, 255, 255, .16);
+            border: 1px solid rgba(255, 255, 255, .28);
+        }
+        .hero-content .btn-primary {
+            background: var(--accent);
+        }
+        .hero-stats div {
+            color: #fff;
+        }
+        .hero-grid .carousel-wrapper {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            aspect-ratio: auto;
+            border-radius: 0;
+            box-shadow: none;
+        }
+        .hero-grid .carousel-wrapper::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            pointer-events: none;
+            background: linear-gradient(90deg, rgba(4, 23, 22, .78), rgba(4, 23, 22, .06) 78%);
+        }
+        .hero-grid .carousel-btn,
+        .hero-grid .carousel-dots {
+            z-index: 4;
+        }
+        .about,
+        .tours {
+            padding: 110px 0;
+        }
+        .tour-card {
+            max-width: 920px;
+            border-radius: 30px;
+        }
+        .tour-item {
+            border-radius: 16px;
+        }
+        .btn-tour,
+        .btn-detail {
+            border-radius: 16px;
+        }
+        #apartmentsTrack .carousel-slide:first-child {
+            background-image: url('https://i.postimg.cc/hvn5YT4Q/IMG-4002.jpg') !important;
+        }
+        #apartmentsTrack .carousel-slide:not(:first-child),
+        #apartmentsCarousel .carousel-btn,
+        #apartmentsCarousel .carousel-dots,
+        #apartmentsTrack .slide-number {
+            display: none;
+        }
+        .btn-tour-telegram {
+            background: #229ED9;
+            box-shadow: 0 6px 24px rgba(34, 158, 217, .32);
+        }
+        .btn-tour-telegram:hover {
+            background: #168ac1;
+        }
+        @media (max-width:760px) {
+            .nav-links {
+                display: none
+            }
+            .hero-grid {
+                min-height: 640px;
+                border-radius: 24px
+            }
+            .hero-content {
+                left: 24px;
+                right: 24px;
+                bottom: 36px
+            }
+            .hero-grid .carousel-wrapper::after {
+                background: linear-gradient(0deg, rgba(4, 23, 22, .88), rgba(4, 23, 22, .08) 78%)
+            }
+        }
     </style>
 </head>
 <body>
@@ -1660,17 +2021,18 @@
 
             <div class="tour-card">
                 <h3 data-i18n="tours-card-title">🌿 Сім днів гармонії</h3>
-                <p data-i18n="tours-card-text">Проживання в комфортних апартаментах по одному в кімнаті з вартістю 790 євро з особи, або 490 євро при проживанні по двоє в кімнаті;<br>5 екскурсій;<br>супровід гіда та підтримка 24/7;<br>страхування на маршрутах наземних екскурсій;<br>Також є можливість окремо замовити індивідуальні екскурсії та апартаменти без туру.</p>
+                <p data-i18n="tours-card-text">Проживання в комфортних апартаментах по одному в кімнаті з вартістю 790 євро з особи, або 490 євро при проживанні по двоє в кімнаті;<br>4 екскурсії;<br>супровід гіда та підтримка 24/7;<br>страхування на маршрутах наземних екскурсій;<br>Також є можливість окремо замовити індивідуальні екскурсії та апартаменти без туру.</p>
                 <div class="price">€790 <small data-i18n="tours-price">/ особа</small></div>
 
                 <div class="tour-list">
+                    <!-- 23 вересня – 1 жовтня — 4 вільні місця -->
                     <div class="tour-item">
                         <div class="tour-info">
-                            <span class="date" data-i18n="tour-date1">📅 27 липня – 5 серпня</span>
+                            <span class="date" data-i18n="tour-date2">📅 23 вересня – 1 жовтня</span>
                             <div class="spots">
                                 <span class="total" data-i18n="spots-total">6 місць</span>
-                                <span class="bar"><span class="fill" style="width: 50%;"></span></span>
-                                <span class="available" data-i18n="spots-available-3">3 вільні</span>
+                                <span class="bar"><span class="fill" style="width: 66.67%;"></span></span>
+                                <span class="available" data-i18n="spots-available-4">4 вільні місця</span>
                             </div>
                         </div>
                         <div class="tour-actions">
@@ -1678,13 +2040,14 @@
                         </div>
                     </div>
 
+                    <!-- 15 жовтня – 22 жовтня — 4 вільні місця -->
                     <div class="tour-item">
                         <div class="tour-info">
-                            <span class="date" data-i18n="tour-date2">📅 23 вересня – 1 жовтня</span>
+                            <span class="date" data-i18n="tour-date3">📅 15 жовтня – 22 жовтня</span>
                             <div class="spots">
                                 <span class="total" data-i18n="spots-total">6 місць</span>
-                                <span class="bar"><span class="fill" style="width: 100%;"></span></span>
-                                <span class="available" data-i18n="spots-available-6">6 вільні</span>
+                                <span class="bar"><span class="fill" style="width: 66.67%;"></span></span>
+                                <span class="available" data-i18n="spots-available-4">4 вільні місця</span>
                             </div>
                         </div>
                         <div class="tour-actions">
@@ -1692,20 +2055,7 @@
                         </div>
                     </div>
 
-                    <div class="tour-item">
-                        <div class="tour-info">
-                            <span class="date" data-i18n="tour-date3">📅 15 жовтня – 22 жовтня</span>
-                            <div class="spots">
-                                <span class="total" data-i18n="spots-total">6 місць</span>
-                                <span class="bar"><span class="fill" style="width: 100%;"></span></span>
-                                <span class="available" data-i18n="spots-available-6">6 вільні</span>
-                            </div>
-                        </div>
-                        <div class="tour-actions">
-                            <button class="btn-detail" data-tour="3" data-i18n="tours-cta-details"><i class="fas fa-info-circle"></i> Детальніше</button>
-                        </div>
-                    </div>
-
+                    <!-- 11 грудня – 18 грудня — 6 вільні -->
                     <div class="tour-item">
                         <div class="tour-info">
                             <span class="date" data-i18n="tour-date4">📅 11 грудня – 18 грудня</span>
@@ -1716,7 +2066,7 @@
                             </div>
                         </div>
                         <div class="tour-actions">
-                            <button class="btn-detail" data-tour="4" data-i18n="tours-cta-details"><i class="fas fa-info-circle"></i> Детальніше</button>
+                            <button class="btn-detail" data-tour="3" data-i18n="tours-cta-details"><i class="fas fa-info-circle"></i> Детальніше</button>
                         </div>
                     </div>
                 </div>
@@ -2097,7 +2447,7 @@
 
                 document.addEventListener('keydown', function(e) {
                     const wrapper = track.closest('.carousel-wrapper');
-                    if (!wrapper) return;a
+                    if (!wrapper) return;
                     const rect = wrapper.getBoundingClientRect();
                     const isVisible = rect.width > 0 && rect.height > 0 && rect.bottom > 0 && rect.top < window
                         .innerHeight;
@@ -2265,14 +2615,13 @@
                     'tours-title': 'Ваш ідеальний тиждень <span>на Мадейрі</span>',
                     'tours-sub': 'Авторська програма, де кожен день — нова емоція!',
                     'tours-card-title': '🌿 Сім днів гармонії',
-                    'tours-card-text': 'Проживання в комфортних апартаментах по одному в кімнаті з вартістю 790 євро з особи, або 490 євро при проживанні по двоє в кімнаті;<br>5 екскурсій;<br>супровід гіда та підтримка 24/7;<br>страхування на маршрутах наземних екскурсій;<br>Також є можливість окремо замовити індивідуальні екскурсії та апартаменти без туру.',
+                    'tours-card-text': 'Проживання в комфортних апартаментах по одному в кімнаті з вартістю 790 євро з особи, або 490 євро при проживанні по двоє в кімнаті;<br>4 екскурсії;<br>супровід гіда та підтримка 24/7;<br>страхування на маршрутах наземних екскурсій;<br>Також є можливість окремо замовити індивідуальні екскурсії та апартаменти без туру.',
                     'tours-price': '/ особа',
-                    'tour-date1': '📅 27 липня – 5 серпня',
                     'tour-date2': '📅 23 вересня – 1 жовтня',
                     'tour-date3': '📅 15 жовтня – 22 жовтня',
                     'tour-date4': '📅 11 грудня – 18 грудня',
                     'spots-total': '6 місць',
-                    'spots-available-3': '3 вільні',
+                    'spots-available-4': '4 вільні місця',
                     'spots-available-6': '6 вільні',
                     'tours-cta-telegram': '<i class="fab fa-telegram-plane"></i> Забронювати в Telegram',
                     'tours-cta-whatsapp': '<i class="fab fa-whatsapp"></i> Забронювати в WhatsApp',
@@ -2397,14 +2746,13 @@
                     'tours-title': 'Váš ideálny týždeň <span>na Madeire</span>',
                     'tours-sub': 'Autorský program, kde každý deň je nový zážitok!',
                     'tours-card-title': '🌿 Sedem dní harmónie',
-                    'tours-card-text': 'Ubytovanie v komfortných apartmánoch po jednom v izbe za 790 eur na osobu, alebo 490 eur pri ubytovaní po dvoch v izbe;<br>5 výletov;<br>sprievod a podpora 24/7;<br>poistenie na trasách pozemných výletov;<br>Je tiež možné samostatne si objednať individuálne výlety a apartmány bez zájazdu.',
+                    'tours-card-text': 'Ubytovanie v komfortných apartmánoch po jednom v izbe za 790 eur na osobu, alebo 490 eur pri ubytovaní po dvoch v izbe;<br>4 výlety;<br>sprievod a podpora 24/7;<br>poistenie na trasách pozemných výletov;<br>Je tiež možné samostatne si objednať individuálne výlety a apartmány bez zájazdu.',
                     'tours-price': '/ osoba',
-                    'tour-date1': '📅 27. júla – 5. augusta',
                     'tour-date2': '📅 23. septembra – 1. októbra',
                     'tour-date3': '📅 15. októbra – 22. októbra',
                     'tour-date4': '📅 11. decembra – 18. decembra',
                     'spots-total': '6 miest',
-                    'spots-available-3': '3 voľné',
+                    'spots-available-4': '4 voľné miesta',
                     'spots-available-6': '6 voľných',
                     'tours-cta-telegram': '<i class="fab fa-telegram-plane"></i> Rezervovať v Telegrame',
                     'tours-cta-whatsapp': '<i class="fab fa-whatsapp"></i> Rezervovať cez WhatsApp',
@@ -2529,14 +2877,13 @@
                     'tours-title': 'Your perfect week <span>on Madeira</span>',
                     'tours-sub': 'An author\'s program where every day is a new emotion!',
                     'tours-card-title': '🌿 Seven days of harmony',
-                    'tours-card-text': 'Accommodation in comfortable apartments one per room at 790 euros per person, or 490 euros when sharing a room;<br>5 excursions;<br>guide support and 24/7 assistance;<br>insurance on land excursion routes;<br>It is also possible to separately order individual excursions and apartments without a tour.',
+                    'tours-card-text': 'Accommodation in comfortable apartments one per room at 790 euros per person, or 490 euros when sharing a room;<br>4 excursions;<br>guide support and 24/7 assistance;<br>insurance on land excursion routes;<br>It is also possible to separately order individual excursions and apartments without a tour.',
                     'tours-price': '/ person',
-                    'tour-date1': '📅 July 27 – August 5',
                     'tour-date2': '📅 September 23 – October 1',
                     'tour-date3': '📅 October 15 – October 22',
                     'tour-date4': '📅 December 11 – December 18',
                     'spots-total': '6 spots',
-                    'spots-available-3': '3 available',
+                    'spots-available-4': '4 available spots',
                     'spots-available-6': '6 available',
                     'tours-cta-telegram': '<i class="fab fa-telegram-plane"></i> Book via Telegram',
                     'tours-cta-whatsapp': '<i class="fab fa-whatsapp"></i> Book via WhatsApp',
