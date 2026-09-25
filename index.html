@@ -569,6 +569,39 @@
             color: var(--text-soft);
         }
 
+        .price-duo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+            margin: 16px 0 8px;
+            text-align: center;
+        }
+
+        .price-duo .price {
+            margin: 0;
+            font-size: 2.6rem;
+            line-height: 1;
+        }
+
+        .price-duo .price-sub {
+            font-family: var(--font-sans);
+            font-size: 0.8rem;
+            font-weight: 400;
+            color: var(--text-soft);
+            margin-top: 6px;
+            line-height: 1.3;
+            max-width: 180px;
+        }
+
+        .price-duo .price-or {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            color: var(--text-soft);
+            font-style: italic;
+        }
+
         .tour-list {
             margin-top: 28px;
             display: flex;
@@ -1487,6 +1520,19 @@
             .tour-card .price {
                 font-size: 2.6rem;
             }
+            .price-duo {
+                gap: 16px;
+            }
+            .price-duo .price {
+                font-size: 2rem;
+            }
+            .price-duo .price-sub {
+                font-size: 0.75rem;
+                max-width: 140px;
+            }
+            .price-duo .price-or {
+                font-size: 1.2rem;
+            }
             .tour-item {
                 flex-direction: column;
                 align-items: stretch;
@@ -1758,6 +1804,19 @@
             .carousel-nav .day-indicator .dot.active {
                 width: 14px;
             }
+            .price-duo {
+                gap: 12px;
+            }
+            .price-duo .price {
+                font-size: 1.7rem;
+            }
+            .price-duo .price-sub {
+                font-size: 0.7rem;
+                max-width: 120px;
+            }
+            .price-duo .price-or {
+                font-size: 1rem;
+            }
         }
 
         :root {
@@ -2021,14 +2080,24 @@
 
             <div class="tour-card">
                 <h3 data-i18n="tours-card-title">🌿 Сім днів гармонії</h3>
-                <p data-i18n="tours-card-text">Проживання в комфортних апартаментах по одному в кімнаті з вартістю 790 євро з особи, або 490 євро при проживанні по двоє в кімнаті;<br>4 екскурсії;<br>супровід гіда та підтримка 24/7;<br>страхування на маршрутах наземних екскурсій;<br>Також є можливість окремо замовити індивідуальні екскурсії та апартаменти без туру.</p>
-                <div class="price">€790 <small data-i18n="tours-price">/ особа</small></div>
+                <p data-i18n="tours-card-text">Проживання в комфортних апартаментах по одному в кімнаті з вартістю 790 євро з особи, або 590 євро при проживанні по двоє в кімнаті;<br>4 екскурсії;<br>супровід гіда та підтримка 24/7;<br>страхування на маршрутах наземних екскурсій;<br>Також є можливість окремо замовити індивідуальні екскурсії та апартаменти без туру.</p>
+
+                <div class="price-duo">
+                    <div class="price">
+                        €790 <small data-i18n="tours-price">/ особа</small>
+                    </div>
+                    <span class="price-or" data-i18n="tours-price-or">або</span>
+                    <div class="price">
+                        €590 <small data-i18n="tours-price">/ особа</small>
+                        <div class="price-sub" data-i18n="tours-price-shared">при двомісному розміщенні в кімнаті</div>
+                    </div>
+                </div>
 
                 <div class="tour-list">
-                    <!-- 23 вересня – 1 жовтня — 4 вільні місця -->
+                    <!-- 20 жовтня – 30 жовтня — 4 вільні місця -->
                     <div class="tour-item">
                         <div class="tour-info">
-                            <span class="date" data-i18n="tour-date2">📅 23 вересня – 1 жовтня</span>
+                            <span class="date" data-i18n="tour-date2">📅 20 жовтня – 30 жовтня</span>
                             <div class="spots">
                                 <span class="total" data-i18n="spots-total">6 місць</span>
                                 <span class="bar"><span class="fill" style="width: 66.67%;"></span></span>
@@ -2040,10 +2109,10 @@
                         </div>
                     </div>
 
-                    <!-- 15 жовтня – 22 жовтня — 4 вільні місця -->
+                    <!-- 15 листопада – 22 листопада — 4 вільні місця -->
                     <div class="tour-item">
                         <div class="tour-info">
-                            <span class="date" data-i18n="tour-date3">📅 15 жовтня – 22 жовтня</span>
+                            <span class="date" data-i18n="tour-date3">📅 15 листопада – 22 листопада</span>
                             <div class="spots">
                                 <span class="total" data-i18n="spots-total">6 місць</span>
                                 <span class="bar"><span class="fill" style="width: 66.67%;"></span></span>
@@ -2615,10 +2684,12 @@
                     'tours-title': 'Ваш ідеальний тиждень <span>на Мадейрі</span>',
                     'tours-sub': 'Авторська програма, де кожен день — нова емоція!',
                     'tours-card-title': '🌿 Сім днів гармонії',
-                    'tours-card-text': 'Проживання в комфортних апартаментах по одному в кімнаті з вартістю 790 євро з особи, або 490 євро при проживанні по двоє в кімнаті;<br>4 екскурсії;<br>супровід гіда та підтримка 24/7;<br>страхування на маршрутах наземних екскурсій;<br>Також є можливість окремо замовити індивідуальні екскурсії та апартаменти без туру.',
+                    'tours-card-text': 'Проживання в комфортних апартаментах по одному в кімнаті з вартістю 790 євро з особи, або 590 євро при проживанні по двоє в кімнаті;<br>4 екскурсії;<br>супровід гіда та підтримка 24/7;<br>страхування на маршрутах наземних екскурсій;<br>Також є можливість окремо замовити індивідуальні екскурсії та апартаменти без туру.',
                     'tours-price': '/ особа',
-                    'tour-date2': '📅 23 вересня – 1 жовтня',
-                    'tour-date3': '📅 15 жовтня – 22 жовтня',
+                    'tours-price-or': 'або',
+                    'tours-price-shared': 'при двомісному розміщенні в кімнаті',
+                    'tour-date2': '📅 20 жовтня – 30 жовтня',
+                    'tour-date3': '📅 15 листопада – 22 листопада',
                     'tour-date4': '📅 11 грудня – 18 грудня',
                     'spots-total': '6 місць',
                     'spots-available-4': '4 вільні місця',
@@ -2746,10 +2817,12 @@
                     'tours-title': 'Váš ideálny týždeň <span>na Madeire</span>',
                     'tours-sub': 'Autorský program, kde každý deň je nový zážitok!',
                     'tours-card-title': '🌿 Sedem dní harmónie',
-                    'tours-card-text': 'Ubytovanie v komfortných apartmánoch po jednom v izbe za 790 eur na osobu, alebo 490 eur pri ubytovaní po dvoch v izbe;<br>4 výlety;<br>sprievod a podpora 24/7;<br>poistenie na trasách pozemných výletov;<br>Je tiež možné samostatne si objednať individuálne výlety a apartmány bez zájazdu.',
+                    'tours-card-text': 'Ubytovanie v komfortných apartmánoch po jednom v izbe za 790 eur na osobu, alebo 590 eur pri ubytovaní po dvoch v izbe;<br>4 výlety;<br>sprievod a podpora 24/7;<br>poistenie na trasách pozemných výletov;<br>Je tiež možné samostatne si objednať individuálne výlety a apartmány bez zájazdu.',
                     'tours-price': '/ osoba',
-                    'tour-date2': '📅 23. septembra – 1. októbra',
-                    'tour-date3': '📅 15. októbra – 22. októbra',
+                    'tours-price-or': 'alebo',
+                    'tours-price-shared': 'pri dvojlôžkovom ubytovaní v izbe',
+                    'tour-date2': '📅 20. októbra – 30. októbra',
+                    'tour-date3': '📅 15. novembra – 22. novembra',
                     'tour-date4': '📅 11. decembra – 18. decembra',
                     'spots-total': '6 miest',
                     'spots-available-4': '4 voľné miesta',
@@ -2877,10 +2950,12 @@
                     'tours-title': 'Your perfect week <span>on Madeira</span>',
                     'tours-sub': 'An author\'s program where every day is a new emotion!',
                     'tours-card-title': '🌿 Seven days of harmony',
-                    'tours-card-text': 'Accommodation in comfortable apartments one per room at 790 euros per person, or 490 euros when sharing a room;<br>4 excursions;<br>guide support and 24/7 assistance;<br>insurance on land excursion routes;<br>It is also possible to separately order individual excursions and apartments without a tour.',
+                    'tours-card-text': 'Accommodation in comfortable apartments one per room at 790 euros per person, or 590 euros when sharing a room;<br>4 excursions;<br>guide support and 24/7 assistance;<br>insurance on land excursion routes;<br>It is also possible to separately order individual excursions and apartments without a tour.',
                     'tours-price': '/ person',
-                    'tour-date2': '📅 September 23 – October 1',
-                    'tour-date3': '📅 October 15 – October 22',
+                    'tours-price-or': 'or',
+                    'tours-price-shared': 'for double occupancy in a room',
+                    'tour-date2': '📅 October 20 – October 30',
+                    'tour-date3': '📅 November 15 – November 22',
                     'tour-date4': '📅 December 11 – December 18',
                     'spots-total': '6 spots',
                     'spots-available-4': '4 available spots',
